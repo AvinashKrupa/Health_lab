@@ -1,0 +1,153 @@
+
+.otp-main-container {
+  .phone-image {
+    margin-top: 75px;
+    img {
+      width:  138.76px;
+      margin-left: 127px; 
+      // margin: auto;
+    }
+  }
+  
+  .otp-back-navigation {
+    margin-top: 107px;
+    display: flex;
+    margin-left: 58px;
+    a {
+      color: #1B1B1B;
+      text-decoration: none;
+    }
+    .fa-chevron-left {
+      height: 12px;
+      width: 6px;
+      padding-top: 5px;
+    }
+    span {
+      height: 20px;
+      font-size: 16px;
+      padding-left:15px ;
+    }
+  }
+  
+  
+  .number-input {
+    margin-top: 63px;
+  
+    span {
+      font-weight: 700;
+      font-size: 15px;
+    }
+  
+    .resend-otp {
+      padding-top: 34px;
+      text-align: center;
+      width: 70%;
+    }
+  
+    .verify-otp {
+     text-align: left;
+    }
+  }
+  
+  .OTP {
+    padding: 0 13px;
+    font-size: 30px;
+  
+    input {
+      outline: unset !important;
+      width: 58.82px !important;
+      border-top: none;
+      border-left: none;
+      border-right: none
+    }
+  }
+  
+  .edit-number {
+    display: flex;
+    flex-direction: row;
+     i {
+      padding-left: 12px;
+     }
+     p {
+      padding-top: 12px;
+      margin-bottom: 0px !important;
+     }
+  }
+  
+  .div-center {
+    .button {
+      width: 368px !important;
+      height: 50px !important; 
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .resend-otp {
+   
+      width: 100% !important;
+    }
+  
+    .phone-image {
+      img {
+        margin-left: 100px !important;
+      }
+     }
+
+     .otp-back-navigation {
+      margin-top: 60px !important
+     }
+
+     p {
+       font-size: 11px !important;
+     }
+
+     .div-center {
+      .button {
+        width: 315px !important;
+      }
+     }
+
+      .OTP {
+        padding: 0 9px !important;
+      }
+  }
+
+  @media only screen and (min-width: 375px) {
+    .phone-image {
+      margin-top: 60px !important;
+      img {
+        margin-left: 90px !important;
+        height: 145px;
+        width: 100px;
+      }
+     }
+
+     .otp-back-navigation {
+        margin-top: 50px !important
+     }
+
+     p {
+       font-size: 10px !important;
+     }
+
+     .div-center {
+      .button {
+        width: 300px !important;
+      }
+     }
+
+      .OTP {
+        padding: 0 8px !important;
+      }
+  }
+
+  @media only screen and (min-width: 400px) { 
+    .otp-text-container {
+      padding-left: 18px !important;
+    }
+  }
+  
+}
+
+
+

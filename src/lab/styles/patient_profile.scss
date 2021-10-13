@@ -1,0 +1,28 @@
+.patient-profile-btn {
+    // background: rgba(40, 163, 218, 0.2);
+    border-radius: 12px;
+    padding: 13px;
+    margin-top: 10px;
+}
+
+.edit-patient-container {
+    background: #FFFFFF;
+    box-shadow: 4px 4px 35px rgb(0 0 0 / 10%);
+    border-radius: 12px;
+    padding: 50px;
+    margin: 70px 0 0 40px;
+
+    .edit-profile-update-button {
+      margin-top: 10px;
+        height: 50px;
+        max-width: 300px;
+        width: 100%;
+      }
+
+    @media only screen and (max-width: 414px) {
+        padding: 20px;
+        margin: 0;
+      }
+
+      
+}

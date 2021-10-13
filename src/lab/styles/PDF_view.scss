@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+  .pdf-container {
+    width: 100%;
+    height: 750px;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .error-msg {
+    width: 100%;
+    color: red;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .pdf-view {
+    .report-card-button {
+      left: unset !important;
+      top: 50px !important;
+      width: 200px !important;
+      box-shadow: 4px 4px 35px 0px rgb(0 0 0 / 10%) !important;
+      border-radius: 8px !important;
+      margin-bottom: 50px !important;
+      height: 40px;
+      border-radius: 8px !important;
+      background-color: rgba(40, 163, 218, 1) !important;
+      position: relative;
+      font-family: Montserrat;
+      font-size: 16px !important;
+      font-style: normal;
+      font-weight: 500 !important;
+      line-height: 20px !important;
+      letter-spacing: -0.420000284910202px;
+      text-align: center !important;
+      color: #f5f8fa !important;
+      padding: 10px;
+      border: none;
+      a {
+        color: unset!important;
+      }
+      a:active>{
+        color: unset!important;
+      }
+      a:hover>{
+        color: unset!important;
+      }
+    }
+  }

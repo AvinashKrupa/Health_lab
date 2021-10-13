@@ -1,0 +1,40 @@
+@media only screen and (min-width: 1500px) {
+
+    .slot-timings-button, .days-button {
+        width: 150px !important;
+        margin-bottom: 10px !important;
+        margin-right: 5px;
+    }
+    .doctor-card-doctor-name {
+        .card-image-video-camera {
+            position: absolute;
+            // right: -62px;
+            left: 197px;
+        }
+    }
+    .card-text-time {
+        position: absolute;
+        left: 104px;
+    }
+
+    .meeting-page-column-content-container {
+        .meeting-page-patient-image  {
+            width: 557px !important;
+        }
+
+        .meeting-page-column-content {
+            margin-left: 162px !important;
+        }
+
+        .meeting-page-text-below-image {
+            margin-top: 146px;
+        }
+
+        .meeting-button {
+            button {
+                width: 206px !important;
+            }
+        }
+    }
+
+}

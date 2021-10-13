@@ -1,0 +1,134 @@
+@media only screen and (min-width: 768px) {
+    .searchRow{
+        margin-top: 15px !important;
+        --bs-gutter-x: 0rem;
+    }
+    .search-container input {
+        width: 620px !important;
+    }
+
+    .doctor-card-doctor-name {
+        font-size: 14px !important;
+     }
+
+    .doctor-card-image {
+        height: 151px;
+        width: 132px;
+        margin-right: 32px;
+        margin-left: 24px;
+        margin-top: 19px;
+        margin-bottom: 1px;
+    }
+
+    .color_card_circle img {
+        position: relative;
+        top: 17px !important;
+        left: 21px !important;
+    }
+
+    .doctor-detail-text-container {
+        padding-right: 70px !important;
+    }
+
+    .top-consultants-container {
+        .search-container {
+            input {
+                width: 650px !important;
+            }
+        }
+    }
+
+    .top-consultants-container {
+        button {
+            position: relative;
+            right: unset;
+            top: unset
+        }
+    }
+
+    .modal-content {
+        top: 30px;
+        width: 500px;
+        height: 100%;
+    }
+
+    .doctor-card-doctor-name {
+        .card-image-video-camera {
+            position: absolute;
+            left: 140px;
+        }
+    }
+
+    .patient-slot-booking-cal {
+        .react-datepicker__input-container {
+            padding-left: 130px;
+        }
+    }
+
+    .slot-summary-doc-details {
+        margin-left: unset;
+    }
+
+    .card-text-time {
+        position: absolute;
+        left: 50px;
+    }
+
+
+    .meeting-page-column-content-container {
+        .meeting-page-text-below-image {
+            display: block !important;
+        }
+
+        .meeting-detail-text  {
+            display: block !important;
+        }
+
+        .meeting-page-patient-image {
+            width: 557px !important;
+        }
+
+        .meeting-button {
+            margin-left:  unset !important;
+            margin-top: 55px !important;
+
+            button {
+                width: 206px !important;
+            }
+        }
+
+
+          .meeting-page-button {
+              margin-left:  32px!important;
+          }
+
+          .back-navigation {
+              margin-left: unset !important;
+          }
+    }
+
+    .doctor_details_button {
+        margin-top: unset!important;
+        margin-bottom: unset !important;
+    }
+    .screen-768 {
+        padding-left: 50px;
+    }
+
+    .upload-button {
+        margin-top: 150px !important;
+    }
+
+    .fa-camera {
+        left: 50px !important;
+        bottom: 140px !important;
+    }
+    .edit-fa-camera {
+        bottom: 125px !important;
+        left: 300px !important;
+    }
+
+    .pdf-container {
+        height: 750px !important;
+    }
+}

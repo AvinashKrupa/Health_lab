@@ -1,0 +1,288 @@
+ // icons
+
+  .meeting-page-left-arrow {
+    width: 24px;
+  }
+
+  .meeting-page-help-circle {
+    height: 24px;
+    width: 24px;
+  }
+
+  // image
+
+  .meeting-page-patient-image {
+    height: 360px;
+    width: 557px;
+    border-radius: 18px;
+  }
+
+  // text
+
+  .meeting-page-text-heading {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 29px;
+    letter-spacing: -0.30000001192092896px;
+    text-align: left;
+    color: #1b1b1b;
+  }
+
+  .meeting-page-text-below-image {
+    font-family: Montserrat;
+    font-size: 16px !important;
+    font-style: normal;
+    font-weight: 500 !important;
+    line-height: 20px !important;
+    letter-spacing: -0.30000001192092896px;
+    text-align: center;
+    margin-top: 146px;
+  }
+
+  .meeting-page-text-grey {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.8941941261291504px;
+    text-align: left !important;
+    color: #8d8d8d;
+  }
+
+  .meeting-page-text-speciality {
+    font-family: Montserrat;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 31px;
+    letter-spacing: -0.8941941261291504px;
+    text-align: left;
+    color: #f6921e;
+    margin-top: 33px !important;
+  }
+
+  .meeting-page-text-doctor-name {
+    font-family: Montserrat;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 47px;
+    letter-spacing: -0.8941941261291504px;
+    text-align: left;
+    margin-top: 11px !important;
+  }
+
+  .meeting-page-text-doctor-info {
+    font-family: Montserrat;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 31px;
+    letter-spacing: -0.8941941261291504px;
+    text-align: left;
+    color: rgba(27, 27, 27, 0.5);
+    margin-top: 11px !important;
+  }
+
+  //containers
+
+  .meeting-page-column-image {
+    max-width: 557px !important;
+  }
+
+  .meeting-page-column-content {
+    margin-left: 162px;
+  }
+
+  .meeting-page-column-content-container {
+    margin-left: 30px;
+    margin-top: 32px !important;
+  }
+
+  .meeting-page-content-wrapper-container {
+    margin-top: 95px !important;
+  }
+
+  // buttons
+
+  .meeting-page-button-white {
+    height: 59px !important;
+    width: 206px !important;
+    border-radius: 6px !important;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.30000001192092896px;
+    text-align: center;
+    color: #28a3da !important;
+    //margin-top: 55px !important;
+    border: 1px solid rgba(40, 163, 218, 1) !important;
+    background: white !important;
+  }
+
+  .meeting-page-button-red {
+    //border: 1px solid rgba(40, 163, 218, 1) !important;
+    background-color: #F15D4A !important;
+
+  }
+ .meeting-page-button-blue {
+   background-color: #28a3da!important;
+
+  }
+  .meeting-page-button {
+    height: 59px !important;
+    width: 206px !important;
+    border-radius: 6px !important;
+    font-family: Montserrat;
+    font-size: 16px !important;
+    font-style: normal;
+    font-weight: 500 !important;
+    line-height: 20px !important;
+    letter-spacing: -0.30000001192092896px;
+    text-align: center;
+    border: 1px solid rgba(40, 163, 218, 1) !important;
+
+    margin-left: -68px !important;
+  }
+
+  .meeting-page-column-content-container {
+    .testing-button {
+      text-align: left;
+      font-family: Montserrat;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 20px;
+      letter-spacing: -0.30000001192092896px;
+      background: white;
+      height: 66px;
+      width: 444px;
+      left: 790px;
+      top: 275px;
+      border-radius: 6px;
+      border: 2px solid #c4c4c4;
+      box-sizing: border-box;
+      color: #1b1b1b;
+    }
+
+    .meeting-video {
+      display: flex;
+      width: 557px;
+      height: 360px;
+  }
+
+  .meeting-page-column-content {
+    margin-left: 162px
+  }
+
+  .meeting-testing-button-container {
+    display: flex;
+    flex-direction: column;
+  }
+  }
+
+  //media query
+
+  @media only screen and (width: 1920px) {
+    .meeting-page-column-content-container {
+      margin-top: 32px !important;
+      margin-left: 300px !important;
+    }
+  }
+
+  @media only screen and (width: 1024px) {
+    .meeting-page-column-content {
+      margin-left: 10px;
+    }
+
+    .meeting-page-button {
+      margin-left: 0px !important;
+      margin-top: 0px !important;
+    }
+  }
+
+  @media only screen and (min-width: 1366px) {
+    .meeting-page-button {
+      margin-left: -40px !important;
+    }
+  }
+
+  @media only screen and (width: 960px) {
+    .meeting-page-column-content {
+      margin-left: 10px;
+    }
+
+    .meeting-page-button {
+      margin-left: 0px !important;
+      margin-top: 0px !important;
+    }
+  }
+
+  @media only screen and (max-width: 420px) {
+    .meeting-page-patient-image {
+      height: 360px;
+      width: 360px;
+      border-radius: 18px;
+    }
+
+    .meeting-page-column-image {
+      max-width: 370px !important;
+    }
+
+    .meeting-page-column-content-container {
+      margin-left: 8px !important;
+    }
+
+    .meeting-page-content-wrapper-container {
+      margin-top: 0px !important;
+    }
+
+    .meeting-page-text-below-image {
+      margin-top: 20px;
+    }
+
+    .meeting-page-column-content {
+      margin-left: 0px;
+    }
+
+    .meeting-page-button {
+      margin-left: 0px !important;
+    }
+  }
+
+  @media only screen and (max-width: 418px) and (min-width: 410px) {
+    .meeting-video {
+      width: 345px !important;
+
+      margin-top: 30px !important;
+    }
+
+    .testing-button {
+      width: 335px !important;
+      margin-left: -10px;
+    }
+
+    .meeting-page-content-wrapper-container {
+      margin-left: 15px;
+    }
+  }
+
+  @media only screen and (min-width: 371px) and (max-width: 409px) {
+    .meeting-video {
+      width: 360px !important;
+
+      margin-top: 30px !important;
+    }
+
+    .testing-button {
+      width: 350px !important;
+    }
+    .meeting-page-column-content{
+      margin-left: 10px !important;
+    }
+  }

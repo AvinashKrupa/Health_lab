@@ -1,0 +1,200 @@
+@media only screen and (min-width: 1024px) {
+
+    .upcoming-appointment-card-image {
+        height: 99px;
+        width: 89px;
+        margin-right: 33px;
+        margin-left: 35px;
+        margin-top: 25px;
+        margin-bottom: 1px;
+    }
+
+    .top-consultants-card-container, .doctor-card-container {
+        .MuiCardContent-root {
+            padding-left: 25px !important;
+        }
+    }
+
+    .doctor-card-image {
+        height: 122px;
+        width: 105px;
+        margin-right: 10px;
+        margin-left: 24px;
+        margin-top: 19px;
+        margin-bottom: 1px;
+    }
+
+    //slot booking
+    .slot-timings-title {
+        margin-right: unset !important;
+    }
+
+    .slot-timings-button, .days-button {
+        width: 80px !important;
+        margin-bottom: 10px !important;
+        margin-right: 5px;
+    }
+
+    .slot-timings-button {
+        height: 50px;
+    }
+
+    .patient-slot-booking {
+        .fa-chevron-left {
+            padding-right: 51px !important;
+        }
+        .fa-chevron-right {
+            padding-left: 45px !important;
+        }
+    }
+    .patient-slot-booking-cal {
+        flex-direction: row !important;
+
+        .slot-calendar {
+            padding-top: 10px !important;
+            margin-bottom: 10px;
+        }
+        .react-datepicker__input-container {
+            padding-left: unset;
+        }
+    }
+
+    .slot-timings-title {
+        width: 71px;
+        font-weight: 500;
+        line-height: unset;
+        letter-spacing: unset;
+        padding-top: 10px;
+    }
+
+    .back-navigation {
+        margin-bottom: 25px !important;
+    }
+
+    .slot-appointment-container {
+        margin-top: unset !important;
+    }
+
+    .doctor-card-doctor-name {
+        font-size: 16px !important;
+        .card-image-video-camera {
+            position: absolute;
+            left: 190px;
+        }
+    }
+
+    .slot-summary-doc-details {
+        margin-left: unset;
+    }
+
+    .card-text-time {
+        position: absolute;
+        left: 100px;
+    }
+
+
+    .meeting-page-column-content-container {
+        .meeting-page-patient-image  {
+            width: 450px !important;
+        }
+
+        
+
+        .meeting-button {
+            button {
+                width: 160px !important;
+            }
+        }
+    }
+
+    .patient-booking-detail .textarea-label, .patient-booking-detail .form-label {
+        font-size: 15px !important;
+    }
+
+    // .fa-camera {
+    //     left: 75px !important;
+    //     bottom: 140px !important;
+    // }
+
+    .edit-fa-camera {
+        left: 45px !important;
+    }
+
+}
+
+@media only screen and (min-width: 1366px) {
+    .doctor-card-doctor-name {
+        .card-image-video-camera {
+            position: absolute;
+            left: 170px;
+        }
+    }
+
+    .card-text-time {
+        position: absolute;
+        left: 80px;
+    }
+
+    .patient-booking-detail .textarea-label, .patient-booking-detail .form-label {
+        font-size: 20px !important;
+    }
+
+    .slot-timings-button, .days-button {
+        width: 105px !important;
+        margin-bottom: 10px !important;
+        margin-right: 5px;
+    }
+
+    .screen-768 {
+        padding-left:  unset !important;
+    }
+
+    .fa-camera {
+        left: 105px !important;
+        bottom: 140px !important;
+    }
+
+    .edit-fa-camera {
+        left: 70px !important;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .fa-camera {
+        left: 80px !important;
+        bottom: 140px !important;
+    }
+
+    .edit-fa-camera {
+        left: 50px !important;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    .edit-fa-camera {
+        bottom: 130px !important;
+        left: 100px !important;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .fa-camera {
+        left: 125px !important;
+        bottom: 140px !important;
+    }
+}
+
+
+
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1300px) {
+    .doctor-card-image {
+        height: 122px;
+        width: 105px;
+        margin-right: 10px;
+        margin-left: 24px;
+        margin-top: 19px;
+        margin-bottom: 1px;
+  }
+}
+

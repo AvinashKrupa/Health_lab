@@ -1,0 +1,45 @@
+.modal-header {
+    background: #28A3DA;
+}
+
+.modal-title {
+    margin: auto;
+    color: white;
+}
+
+.terms-content{
+  .modal-dialog{
+    max-width: 100% !important;
+    margin: 1.75rem !important;
+  }
+  .modal-content{
+    width: 100% !important;
+    top: 0 !important;
+    height: calc(100% - 120px) !important;
+  }
+
+}
+
+.modal-content {
+    .card-text-close {
+        width: 121px;
+        height: 40px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: -0.42px;
+        border: 1px solid #28A3DA;
+        box-sizing: border-box;
+        border-radius: 6px;
+        background: white;
+        color: #28A3DA;
+      }
+
+      button {
+        width: 121px;
+        height: 40px;
+      }
+}
+
+

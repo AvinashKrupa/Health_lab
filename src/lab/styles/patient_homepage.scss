@@ -1,0 +1,457 @@
+body {
+  overflow-x: hidden;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.patient-homepage-text-h4 {
+    height: 24px;
+    width: 110px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.420000284910202px;
+    text-align: left;
+    color: rgba(27, 27, 27, 1);
+  }
+  
+  .patient-homepage-text-h5 {
+    height: 20px;
+    width: 112px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.420000284910202px;
+    text-align: right;
+    margin-bottom: auto;
+    margin-left: auto;
+  }
+  
+  .patient-homepage-link-text {
+    height: 20px;
+    width: 61px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.30000001192092896px;
+    text-align: right;
+    color: rgba(40, 163, 218, 1);
+  }
+
+
+
+
+  // SIDEBAR MENU CODE
+  .sidebarMenu {
+    height: 100%;
+    margin: 0px;
+    padding: 10px;
+    background: #f3f3f3;
+    width: 63px;
+    position: fixed;
+    z-index: 9;
+}
+
+.sidebarMenu li  p {
+  margin-bottom: .5rem;
+}
+
+ .sidebarMenu li{
+  list-style: none;
+  text-align: center;
+  color: #fff;
+  border-radius: 10px;
+  padding: 3px;
+  margin: 0px;
+  font-size: 11px;
+  margin-bottom: 30px;
+ }
+     
+ .sidebarMenu li a{
+  color: #1B1B1B;
+  text-decoration: none;
+ }
+
+ .sidebarMenu li:hover{
+   background: #28A3DA;
+ }
+ .sidebarMenu li a:hover{
+  color: #fff;
+  text-decoration: none;
+ }
+.sidebarMenu .logo{
+  text-align: center;
+  padding: 15px;
+  border-bottom: 1px solid #1B1B1B;
+
+}
+
+
+
+
+.sidebarMenu .logo img{
+  width: 18px;
+  border-radius: 50px;
+}
+
+.sidebarMenu  .fa{
+  font-size: 24px !important;
+    color: #1B1B1B !important;
+}
+
+.sidenav---sidenav---_2tBP {
+  background: #F3F3F3 !important;
+  
+  
+}
+.sidenav---sidenav-toggle---1KRjR .sidenav---icon-bar---u1f02 {
+  background-color: #000 !important;
+}
+
+
+.sidenav---navicon---3gCRo, .sidenav---navtext---1AE_f{
+  color: #1B1B1B;
+}
+.sidenav---navtext---1AE_f{
+  color: #000 !important;
+  font-size: 16px;
+  position: relative;
+  top: -3px;
+  left: 15px;
+}
+
+
+.sidenav---sidenav-navitem---uwIJ-.sidenav---selected---1EK3y.sidenav---highlighted---oUx9u {
+  border-radius: 8px;
+  // background: #2f87af;
+  width: 97%;
+  height: 60px;
+  color: #ccc !important;
+}
+
+.sidenav---sidenav-navitem---uwIJ- {
+  margin-bottom: 10px !important;
+}
+.setLogo .sidenav---navtext---1AE_f{
+font-size: 30px;
+    color: #70bfe6 !important;
+    font-weight: bold;
+    position: relative;
+    left: 11px;
+    top: -1px;
+}
+
+
+  
+  .patient-homepage-motion-images {
+    height: 252px;
+    width: 1252px;
+    border-radius: 12px;
+    background: linear-gradient(92.07deg, #28a3da 0.26%, #3085ab 99.17%);
+    margin: auto;
+  }
+  
+  .patient-homepage-search {
+    height: 50px;
+    width: 650px;
+    border-radius: 8px !important;
+    border: 2px solid rgba(27, 27, 27, 0.3);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.420000284910202px;
+    text-align: left;
+  }
+  
+
+
+  // landingPrePage
+  .landingPrePage{
+    width: 100%;
+    background: white;
+    height: 100%;
+    position: absolute;
+    z-index: 12;
+  }
+
+  .PrePageDesign{
+    text-align: center;
+  }
+  .PrePageDesign .boxLeft{
+    padding: 14% 7%;
+    background: #fff;
+    height: 100vh;
+  }
+
+  .PrePageDesign .boxRight{
+    padding: 14% 7%;
+    background: #fff;
+    height: 100vh;
+  }
+
+  .PrePageDesign .boxRight:hover, .PrePageDesign .boxLeft:hover{
+    background: #e5f4fb;
+    cursor: pointer;
+  }
+  .PrePageDesign img{width: 60%;}
+
+  .PrePageDesign p{
+    margin-bottom: 0px;
+    color: #1B1B1BCC;
+  }
+  .PrePageDesign .boxTextStyle{
+    padding: 60px;
+  }
+
+  .PrePageDesign .boxTextStyle button {
+    margin-top: 50px;
+    background: #28A3DA;
+    border: 1px solid #28A3DA !important;
+    width: 200px;
+  }
+
+  .PrePageDesign .boxTextStyle h4{
+    font-size: 20px;
+    color: #1B1B1BCC;
+  }
+  .container{
+        max-width: 100%;
+
+  }
+  .landingPrePage .no-padding.col{
+    padding: 0px;
+  }
+
+
+  .search-container {
+    .fa-search {
+      font-size: 22px;
+      margin: auto;
+      position: relative;
+            z-index: 6;
+            left: 19px
+    }
+    input {
+      width: 650px !important;
+        margin-left: -20px !important;
+        padding-left: 50px;
+    }
+
+    .input-group {
+      flex-wrap: unset !important;
+    }
+
+    .btn-primary {
+      background-color: unset !important;
+      border-color: unset !important;
+    }
+       
+  }
+
+
+
+
+
+
+     
+  @media screen and (device-aspect-ratio: 40/71) {
+    .speciality-card-container {
+      width: 119px !important;
+      margin: 7px 5px !important;
+    }
+
+   
+    
+  }
+
+  @media only screen and (max-width: 767px) {
+    .PrePageDesign .boxRight{
+      height: 100%;
+    }
+    .PrePageDesign img{width: 100%;}
+
+
+    nav.sidenav---sidenav---_2tBP.sidenav---collapsed---LQDEv .sidenav---sidenav-toggle---1KRjR {
+      position: absolute;
+      top: -5px;
+      left: 71px;
+    }
+    .sidenav---sidenav---_2tBP {
+      left: -70px !important;
+      }
+      .sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL {
+        left: 0px !important;
+    }
+    .sidebarMenu {
+      background: transparent;
+     
+  }
+  .searchRow {
+    margin-top: 25px !important;
+}
+.search-container button.btn.btn-primary{
+  margin-top: 0px !important;
+  top: 10px;
+  right: 10px;
+}
+.search-container .searchRow.row{
+  margin-top: 65px !important;
+  width: 98% !important;
+}
+// .back-navigation {
+//   margin-top: 6px !important;
+//   text-align: center;
+// }
+.top-consultants-container.row {
+  overflow-x: hidden !important;
+}
+.top-consultants-container .screen-768{
+  width: 88%;
+}
+.screen-768{
+  width: 88.333333%;
+  margin-left: -2%;
+}
+.speciality-card-container {
+  width: 42% !important;
+}
+
+.carousel_image{
+  margin: 0px !important;
+}
+
+.carousel_h3{
+  margin-top: -130px !important;
+  font-size: 18px !important;
+  line-height: 20px !important;
+  margin-left: -44px !important;
+}
+
+.back-navigation i.fas.fa-arrow-left {
+  display: none;
+}
+.doctor-card-doctor-details {
+    font-size: 11px;
+    width: 142px;
+    overflow: hidden;
+}
+
+  .back-navigation {
+    margin-top: -5px !important;
+    text-align: center !important;
+    background: white !important;
+    width: 100%;
+    position: fixed;
+    padding-top: 10px;
+    left: 0px;
+    height: 50px;
+    z-index: 1;
+    display: inherit !important;
+}
+.back-navigation span {
+  font-size: 21px !important;
+}
+
+
+
+.search-container button.btn.btn-primary{
+  margin-top: 0px !important;
+  top: 4px;
+  right: 15px;
+  position: fixed;
+  z-index: 2;
+
+}
+.search-container button.btn.btn-primary img{
+height: 23px!important;
+width: 23px!important;
+}
+
+
+
+  
+}
+
+@media only screen 
+and (min-device-width : 414px) 
+and (max-device-width : 736px) { 
+  nav.sidenav---sidenav---_2tBP.sidenav---collapsed---LQDEv .sidenav---sidenav-toggle---1KRjR {
+    position: absolute;
+    top: 0px;
+}
+.back-navigation {
+  margin-top: 30px !important;
+}
+
+
+
+}
+ 
+
+
+
+  @media only screen and (max-width: 480px) { 
+    .carousel_container {
+      height: 207px !important;
+      width: 350px !important;
+    }
+
+    .patient-home-container {
+      img {
+        margin-left: 70px !important;
+      }
+    }
+    
+  }
+  @media only screen and (max-width: 376px) { 
+    .carousel_container {
+      height: 207px !important;
+      width: 314px !important;
+    }
+
+    .patient-home-container {
+      img {
+        margin-left: 80px !important;
+      }
+    }
+  }
+    
+ 
+  @media only screen 
+  and (min-device-width : 300px) 
+  and (max-device-width : 374px) { 
+  
+  .doctor-card-image{width: 82px !important;
+    margin-right: 14px !important;
+  }
+  
+  .react-multi-carousel-list .carousel_container {
+    width: 280px !important;
+}
+
+  
+  .searchRow {
+    margin-top: 38px !important;
+    width: 98% !important;
+  }
+  
+
+  .search-container button.btn.btn-primary{
+    margin-top: 0px !important;
+    top: 4px;
+    right: 10px;
+    position: fixed;
+    z-index: 2;
+  
+  }
+  .search-container button.btn.btn-primary img{
+  height: 23px;
+  width: 23px
+  }
+  
+  }

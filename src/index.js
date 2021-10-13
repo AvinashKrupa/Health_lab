@@ -3,11 +3,26 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import index from './lab/styles/index';
+import {AuthContextProvider} from './lab/context/AuthContextProvider';
+import { ToastProvider } from 'react-toast-notifications';
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
+
+
+
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <React.StrictMode>
+        <AuthContextProvider>
+            <ToastProvider autoDismiss={true}>
+                <App />
+            </ToastProvider>
+        </AuthContextProvider>
+    </React.StrictMode>,
   document.getElementById('root')
 );
 

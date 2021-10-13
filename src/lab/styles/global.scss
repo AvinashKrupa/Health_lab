@@ -1,0 +1,68 @@
+body {
+  .btn-primary.disabled, .btn-primary:disabled {
+    color: #fff;
+    background-color: #27a3da;
+    border-color: #27a3da;
+  }
+  .btn-primary:hover {
+    color: #fff;
+    background-color: #27a3da;
+    border-color: #27a3da;
+  }
+  .btn-primary{
+    border-color: rgba(27, 27, 27, 0.2) !important;
+  }
+  .btn-primary:hover {
+    border-color: #28A3DA;
+  }
+  .btn-primary:focus {
+    box-shadow: unset;
+    background-color: #27a3da;
+    border: 2px solid #28A3DA;
+  }
+  .btn-primary:hover {
+    opacity: 0.8;
+  }
+
+  .back-nav-container{
+    display: flex;
+    align-items: center;
+    >img{
+      height: 20px;
+      width: 31px;
+      cursor: pointer;
+    }
+    >span{
+      margin-left:18px
+    }
+  }
+  .back-nav-container-dr{
+    display: flex;
+    align-items: center;
+    >img{
+      height: 20px;
+      width: 31px;
+      cursor: pointer;
+    }
+    >span{
+      margin-left:10px
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .back-nav-container-dr {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: -12px;
+    left: 120px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .back-nav-container-dr {
+    top: 16px;
+    left: 80px;
+  }
+}

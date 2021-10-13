@@ -1,0 +1,151 @@
+// left nav bar
+
+.report-page-left-navbar {
+    max-width: 80px !important;
+    background: #f3f3f3;
+  }
+  
+  // containers
+  
+  .report-page-content-container {
+    margin-left: 54px;
+  }
+  
+  .report-page-card-container {
+    height: 100%;
+    border-radius: 12px;
+    box-shadow: 4px 4px 35px 0px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 1);
+  }
+  
+  // icons
+  
+  .report-page-arrow-left {
+    width: 24px !important;
+    margin-right: 16px;
+  }
+  
+  .report-page-map-pin {
+    margin-right: 11px;
+  }
+  
+  .report-page-nav-arrow {
+    height: 12px;
+    width: 6px;
+    vertical-align: middle;
+  }
+  
+  // padding 0
+  
+  .padding-0 {
+    padding: 0px 0px 0px 0px !important;
+  }
+  
+  //images
+  
+  .report-page-doctor-image {
+    height: 32px;
+    width: 32px;
+    background: #c4c4c4;
+    border-radius: 50%;
+  }
+  
+  // text
+  
+  .report-page-text-heading {
+    width: 124px !important;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 29px;
+    letter-spacing: -0.30000001192092896px;
+    text-align: left;
+    color: #1b1b1b;
+    padding: 0px 0px 0px 0px !important;
+  }
+  
+  .report-page-text-location {
+    width: 131px !important;
+    margin-left: 1021px;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: -0.420000284910202px;
+    text-align: left;
+    color: #1b1b1b;
+    padding: 0px 0px 0px 0px !important;
+  }
+  
+  .report-page-text-type-selected {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #1b1b1b;
+    border-bottom: solid 2px #1b1b1b;
+    padding-bottom: 10px;
+  }
+  
+  .report-page-text-type-unselected {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: rgba(27, 27, 27, 0.5);
+  }
+  
+  .report-page-text-doctor-name {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 17px;
+    letter-spacing: -0.420000284910202px;
+    text-align: left;
+    color: #1b1b1b;
+    padding: 0px 0px 0px 0px !important;
+    position: relative;
+    top: -7px;
+  }
+  
+  .report-page-text-doctor-speciality {
+    font-family: Montserrat;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 12px;
+    letter-spacing: -0.420000284910202px;
+    text-align: center;
+    color: #f6921e;
+    padding: 0px 0px 0px 0px !important;
+    position: relative;
+    top: 12px;
+    left: -102px;
+  }
+  
+  .report-page-text-date-text {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.420000284910202px;
+    text-align: left;
+    color: #1b1b1b;
+  }
+  
+  // margins
+  
+  .margin-left-103 {
+    margin-left: 103px;
+  }
+  

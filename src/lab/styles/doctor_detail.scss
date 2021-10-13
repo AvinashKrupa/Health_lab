@@ -1,0 +1,87 @@
+.doctor_details_arrow_left {
+    height: 30px;
+    width: 25px;
+    margin-right: 16px;
+  }
+  .doctor_details_h3 {
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 29px;
+    letter-spacing: -0.30000001192092896px;
+  }
+  
+  .doctor_details_h4 {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.30034899711608887px;
+    text-align: left;
+  }
+  
+  .doctor_details_h5 {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.2336047738790512px;
+    text-align: left;
+  }
+  
+  .doctor_details_color_h5 {
+    margin-top: 10px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: -0.30000001192092896px;
+    color: rgba(27, 27, 27, 0.5)
+  }
+  
+  .doctor_details_button {
+    height: 50px !important;
+    width: 270px !important;
+    background: rgba(40, 163, 218, 1) !important;
+    margin-left: auto;
+    margin-right: 50px;
+    box-shadow: 4px 4px 35px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 8px !important;
+    margin-bottom: 51px;
+  }
+
+  .doctor_details-doctor-card-remove-pad {
+   .doctor-card-container {
+    padding-left:  unset !important;
+    padding-right:  unset !important;
+   }
+  }
+
+
+  @media only screen and (max-width: 480px) { 
+    .doctor_details_h3 {
+      margin-top: 50px;
+    }
+
+    .doctor-detail-container {
+      img {
+        margin-left: 70px !important;
+      }
+    }
+    
+    
+  }
+  @media only screen and (max-width: 376px) { 
+    .carousel_container {
+      height: 207px !important;
+      width: 330px !important;
+    }
+
+    .doctor-detail-container {
+      img {
+        margin-left: 80px !important;
+      }
+    }
+  }
+
+

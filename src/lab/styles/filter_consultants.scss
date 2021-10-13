@@ -1,0 +1,103 @@
+.filter_menu_container {
+    height: 821px;
+    width: 247px;
+    background: #f3f3f3;
+  }
+
+  .filter_menu_h4 {
+    height: 20px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: -0.30000001192092896px;
+  }
+
+  .filter_menu_h5 {
+    max-width: 100px;
+    width: 100px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: -0.30000001192092896px;
+    margin: 24px;
+    height: 40px;
+  }
+
+  .filter_menu_button {
+    height: 40px;
+    width: 90px;
+    border-radius: 8px;
+    border: 2px solid rgba(40, 163, 218, 1) !important;
+    border-bottom-left-radius: 8px !important;
+    border-top-left-radius: 8px !important;
+    border-top-right-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+    background: transparent;
+    color: black;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: 0px;
+  }
+
+  .filter_menu_image {
+    float: right;
+    padding-right: 21px
+  }
+
+  .filter_menu_inputrange {
+    font-family: Montserrat;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 13px;
+    letter-spacing: 0.5173913836479187px;
+    text-align: center;
+    height: 0px;
+    width: 213px;
+    left: 17px;
+    top: 308px;
+    margin-top: 60px;
+  }
+.input-range__label {
+    font-family: Montserrat!important;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.5173913836479187px;
+    text-align: center;
+  }
+
+  .input-range {
+    width: 213px !important;
+    margin: auto;
+    margin-top: 55px;
+  }
+
+  .input-range__slider {
+    background: #28a3da !important;
+    height: 15px !important;
+    width: 15px !important;
+  }
+
+  .input-range__track.input-range__track--active {
+    background: #28a3da !important;
+  }
+
+  .input-range__track.input-range__track--background {
+    background: rgb(206, 203, 202);
+  }
+
+  .input-range__label-container {
+    top: 35px;
+  }
+
+  .input-range__label.input-range__label--min {
+    display: none;
+  }
+  .input-range__label.input-range__label--max {
+    display: none;
+  }
+
+  .filter_menu_scrollable_div {
+    max-height: 150px !important;
+    overflow-y: scroll;
+  }

@@ -1,0 +1,164 @@
+.card-button-join {
+    height: 32px;
+    width: 121px;
+    border-radius: 6px;
+    background: rgba(40, 163, 218, 1);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: -0.420000284910202px;
+    text-align: center;
+    margin-left: -90px;
+}
+
+
+.card-buttons-row {
+  margin-bottom: 8px;
+  margin-top: 8px;
+
+  .card-text-Cancel {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: -0.42px;
+  }
+
+  .card-text-Prescription {
+    width: 121px;
+    height: 32px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: -0.42px;
+    border: 1px solid #28A3DA;
+    box-sizing: border-box;
+    border-radius: 6px;
+  }
+  .card-text-button-disabled {
+    border: 1px solid #999999;
+    background-color: #cccccc!important;
+    color: #666666;
+    width: 121px;
+    height: 32px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: -0.42px;
+    box-sizing: border-box;
+    border-radius: 6px;
+  }
+}
+
+
+  .card-text-date-and-time {
+    height: 12px;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: -0.420000284910202px;
+    text-align: left;
+    color: rgba(27, 27, 27, 0.5);
+    margin-top: 5px;
+  }
+
+  .card-text-time {
+    height: 12px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 12px;
+    letter-spacing: -0.420000284910202px;
+    text-align: left;
+    color: #28a3da;
+    margin-top: 5px;
+    margin-left: 87px;
+  }
+
+
+.upcoming-appointment-card-image {
+        height: 99px;
+        width: 98px;
+        margin-right: 32px;
+        margin-left: 24px;
+        margin-top: 25px;
+        margin-bottom: 1px;
+}
+
+.upcoming-appointment-card-container {
+    height: 180px !important;
+    width: 400px !important;
+    margin-bottom: 27px;
+    margin-right: 40px;
+    border-radius: 12px !important;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.16) !important;
+  }
+
+  .appointment-page-cards-row {
+      .MuiCardContent-root {
+        padding-left: unset !important;
+      }
+  }
+
+  .card-text-Cancel, .card-text-Prescription {
+    color: #28A3DA;
+    background-color: unset !important;
+  }
+
+  .doctor-card-doctor-name {
+    position: relative;
+    .card-image-video-camera {
+      position: absolute;
+      left: 197px;
+
+    }
+  }
+
+@media screen and (max-width: 1440px) {
+  .upcoming-appointment-card-container {
+    min-width: 375px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .upcoming-appointment-card-container {
+    min-width: 390px;
+    width: 390px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .upcoming-appointment-card-container {
+    min-width: 390px;
+    width: 390px;
+  }
+}
+
+
+@media only screen and (max-width: 767px) {
+  
+  .upcoming-appointment-card-container {
+    min-width: 106%;
+  }
+  .card-button-join{
+    margin-left: -110px;
+  }
+  .doctor-card-doctor-name .card-image-video-camera{
+    left: 148px !important;
+  }
+    .appointment-page-text-heading {
+      width: 100%;
+      text-align: center;
+      position: fixed;
+      background: #fff;
+      top: 0px;
+      height: 50px;
+      left: 0px;
+      z-index: 1;
+      padding-top: 10px;
+  }
+
+}
