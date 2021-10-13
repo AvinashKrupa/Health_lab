@@ -62,7 +62,7 @@ debugger
                             {/*<i className="fa fa-fw fa-home" style={{fontSize: '1.65em'}}/>*/}
                         </NavIcon>
                         <NavText>
-                            Home
+                            Upload
                         </NavText>
                     </NavItem>
                     {/*<NavItem eventKey="appointments">*/}
