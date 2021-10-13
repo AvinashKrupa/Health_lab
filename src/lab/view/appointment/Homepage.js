@@ -12,7 +12,7 @@ import moment from "moment";
 import {back_icon, calendar_blue} from "../../constants/DoctorImages";
 import Spinner from "../../commonComponent/Spinner";
 
-const UpcomingAppointments = (props) => {
+const Homepage = (props) => {
   let timer = null;
   const {addToast} = useToasts();
   let [searchText, setSearchText] = useState(useSearchStore(state => state.searchText));
@@ -117,24 +117,7 @@ const UpcomingAppointments = (props) => {
           <Row className='top-consultants-container'>
             <Col lg="1" sm="1" xs='1'/>
             <Col lg="10" sm="10" xs='10'>
-              <Row className='back-navigation'>
-                <div style={{backgroundColor: '', display:"flex", flexDirection: "row", justifyContent:"space-between"}}>
-                  <div className="back-nav-container-dr">
-                    <img src={back_icon} alt='back_icon-img' onClick={()=>props.history.goBack()}></img>
-                    <span>{props.location?.state?.title || 'All Appointments'}</span>
-                  </div>
-                  {props.location?.state?.title === 'Search Appointments' && <div className="calendar-container">
-                    <DatePicker
-                        selected={new Date(currentDate)}
-                        onChange={(date) => setCurrentDate(date)}
-                        maxDate={new Date(new Date().getFullYear(), new Date().getMonth() + 1, 15)}
-                        placeholderText="Select a date before 30 days in the future"
-                        customInput={<CustomDateComponent/>}
-                    />
-                  </div>}
-                </div>
-              </Row>
-              <div className='search-container' style={{display: "flex", justifyContent: 'space-between'}}>
+              <div className='search-container' style={{display: "flex", justifyContent: 'space-between', marginTop: 34}}>
                 <SearchInputWithIcon
                     col='12'
                     placeholder="Search patients"
@@ -146,27 +129,27 @@ const UpcomingAppointments = (props) => {
               </div>
 
               <Row>
-            <span
-                style={{marginLeft: "12px"}}
-                className={
-                  upcoming
-                      ? "appointment-page-text-selected"
-                      : "appointment-page-text-unselected"
-                }
-                onClick={handleSelection}
-            >
-              Upcoming
-            </span>
-                <span
-                    className={
-                      previous
-                          ? "appointment-page-text-selected appointment-page-text-margin-left-41"
-                          : "appointment-page-text-unselected appointment-page-text-margin-left-41"
-                    }
-                    onClick={handleSelection}
-                >
-              Previous
-            </span>
+            {/*<span*/}
+            {/*    style={{marginLeft: "12px"}}*/}
+            {/*    className={*/}
+            {/*      upcoming*/}
+            {/*          ? "appointment-page-text-selected"*/}
+            {/*          : "appointment-page-text-unselected"*/}
+            {/*    }*/}
+            {/*    onClick={handleSelection}*/}
+            {/*>*/}
+            {/*  Upcoming*/}
+            {/*</span>*/}
+            {/*    <span*/}
+            {/*        className={*/}
+            {/*          previous*/}
+            {/*              ? "appointment-page-text-selected appointment-page-text-margin-left-41"*/}
+            {/*              : "appointment-page-text-unselected appointment-page-text-margin-left-41"*/}
+            {/*        }*/}
+            {/*        onClick={handleSelection}*/}
+            {/*    >*/}
+            {/*  Previous*/}
+            {/*</span>*/}
               </Row>
               <Row className="appointment-page-cards-row">
                 {upcoming ? (
@@ -195,7 +178,7 @@ const UpcomingAppointments = (props) => {
                       })}
                       {!appointmentLoaderStatus && !upcomingAppointments.length &&
                       <div className="empty-list-container">
-                        <h4>No appointments found</h4>
+                        <h4>No patient found</h4>
                       </div>
                       }
                     </>
@@ -225,7 +208,7 @@ const UpcomingAppointments = (props) => {
                       })}
                       {!appointmentLoaderStatus && !previousAppointments.length &&
                       <div className="empty-list-container">
-                        <h4>No appointments found</h4>
+                        <h4>No patient found</h4>
                       </div>
                       }
                     </>
@@ -238,4 +221,4 @@ const UpcomingAppointments = (props) => {
   );
 };
 
-export default UpcomingAppointments;
+export default Homepage;

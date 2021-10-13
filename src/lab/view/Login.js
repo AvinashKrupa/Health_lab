@@ -44,9 +44,10 @@ const Login = ({history}) => {
         post(API.SENDOTP, params, true)
             .then(response => {
                 if (response.status === 200) {
-                    storeData('USER_TYPE', 1)
+                    storeData('USER_TYPE', 2)
                     addToast(response.data.message, {appearance: 'success'});
-                    history.push('/lab/otp');
+                    history.push('/otp');
+                    // history.push('/home');
                     setShowLoader(false);
                 } else {
                     addToast(response.data.message, {appearance: 'error'});

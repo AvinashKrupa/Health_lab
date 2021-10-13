@@ -1,0 +1,166 @@
+/**
+ styles for doctor dashboard
+ */
+.welcome-text-container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+
+  .text-welcome-header {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: -0.420000284910202px;
+    text-align: left;
+    color: rgba(27, 27, 27, 0.6);
+    margin-right: 8px;
+  }
+
+  .text-welcome-subheader {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 29px;
+    letter-spacing: -0.420000284910202px;
+    text-align: left;
+    color: #1B1B1B;
+  }
+}
+
+
+.upcoming-appointment-container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: 32px;
+  margin-bottom: 24px;
+
+  .upcoming-appointment-text {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.420000284910202px;
+    text-align: left;
+    color: #1B1B1B;
+
+  }
+
+  .upcoming-appointment-view_all {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.30000001192092896px;
+    text-align: right;
+  }
+
+}
+
+/**
+  Dashboard Patient appointment card
+ */
+.patient-appointment-container {
+  cursor: pointer;
+  margin-bottom: 10%;
+  display: flex;
+  width: 100%;
+  max-width: 400px;
+  max-height: 154px;
+  left: 134px;
+  top: 391px;
+  padding: 21px;
+
+  background: #FFFFFF;
+  box-shadow: 5.6px 5.6px 49px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 12px !important;
+
+  .image-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1.2;
+    //background-color: palegreen;
+    //position: absolute;
+    width: 109.2px;
+    height: 112px;
+    left: 154.4px;
+    top: 412px;
+
+    border-radius: 16px;
+  }
+
+  .content-container {
+    flex: 3;
+    //background-color: lightgoldenrodyellow;
+    margin-left: 6%;
+    width: 109.2px;
+    height: 112px;
+    left: 154.4px;
+    top: 412px;
+    border-radius: 16px;
+    padding-top: 3%;
+
+    .patient-name {
+      font-family: Montserrat;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 22px;
+      letter-spacing: -0.5880004167556763px;
+      text-align: left;
+      color: #1B1B1B;
+    }
+
+    .purpose-info {
+      color: #1B1B1B;
+      font-family: Montserrat;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 17px;
+      letter-spacing: -0.5880004167556763px;
+      text-align: left;
+    }
+
+    .time-info {
+      color: rgba(27, 27, 27, 0.5);
+      font-family: Montserrat;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 17px;
+      letter-spacing: -0.5880004167556763px;
+      text-align: left;
+      //min-width: 100%;
+      //width: 100%;
+      //max-width: 100%;
+    }
+
+    .status-info {
+      position: relative;
+      top: -8px;
+      font-family: Montserrat;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 15px;
+      letter-spacing: -0.5880004167556763px;
+      text-align: center;
+      color: #F6921E;
+    }
+  }
+}
+
+/**
+  Media queries
+ */
+  @media screen and (max-width: 425px) {
+}

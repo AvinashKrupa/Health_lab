@@ -30,15 +30,15 @@ const Sidebar = (props) => {
 
                 if( selected === 'profile') {
                     selected = 'profile/editProfile';
-                    props.history.push(`${routeName}${selected}`);
+                    props.history.push(`${selected}`);
                 }
 
                 if( selected === 'signOut') {
                     clearSession();
-                    props.history.push(`${routeName}`);
+                    props.history.push(`/`);
                 }
-
-                sidebar.includes(selected) && props.history.push(`${routeName}${selected}`);
+debugger
+                sidebar.includes(selected) && props.history.push(`${selected}`);
             }}>
                 <SideNav.Toggle/>
                 <SideNav.Nav defaultSelected={defaultSelection}>
@@ -58,32 +58,32 @@ const Sidebar = (props) => {
                             Home
                         </NavText>
                     </NavItem>
-                    <NavItem eventKey="appointments">
-                        <NavIcon>
-                            <i className="fa fa-fw fa-calendar" style={{fontSize: '1.75em'}}/>
-                        </NavIcon>
-                        <NavText>
-                            Appointments
-                        </NavText>
-                    </NavItem>
+                    {/*<NavItem eventKey="appointments">*/}
+                    {/*    <NavIcon>*/}
+                    {/*        <i className="fa fa-fw fa-calendar" style={{fontSize: '1.75em'}}/>*/}
+                    {/*    </NavIcon>*/}
+                    {/*    <NavText>*/}
+                    {/*        Appointments*/}
+                    {/*    </NavText>*/}
+                    {/*</NavItem>*/}
 
-                    {userType === 1 && <NavItem eventKey="reports">
-                        <NavIcon>
-                            <i className="fa fa-fw fa-briefcase" style={{fontSize: '1.75em'}}/>
-                        </NavIcon>
-                        <NavText>
-                            Reports
-                        </NavText>
-                    </NavItem>}
+                    {/*{userType === 1 && <NavItem eventKey="reports">*/}
+                    {/*    <NavIcon>*/}
+                    {/*        <i className="fa fa-fw fa-briefcase" style={{fontSize: '1.75em'}}/>*/}
+                    {/*    </NavIcon>*/}
+                    {/*    <NavText>*/}
+                    {/*        Reports*/}
+                    {/*    </NavText>*/}
+                    {/*</NavItem>}*/}
 
-                    <NavItem eventKey="profile">
-                        <NavIcon>
-                            <i className="fa fa-fw fa-user" style={{fontSize: '1.75em'}}/>
-                        </NavIcon>
-                        <NavText>
-                            Profile
-                        </NavText>
-                    </NavItem>
+                    {/*<NavItem eventKey="profile">*/}
+                    {/*    <NavIcon>*/}
+                    {/*        <i className="fa fa-fw fa-user" style={{fontSize: '1.75em'}}/>*/}
+                    {/*    </NavIcon>*/}
+                    {/*    <NavText>*/}
+                    {/*        Profile*/}
+                    {/*    </NavText>*/}
+                    {/*</NavItem>*/}
                     <NavItem eventKey="signOut">
                         <NavIcon>
                             <i className="fa fa-fw fas fa-sign-out-alt" style={{fontSize: '1.75em'}}/>

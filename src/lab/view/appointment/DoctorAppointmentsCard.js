@@ -8,7 +8,7 @@ import TextArea from '../../commonComponent/TextArea';
 import { useToasts } from 'react-toast-notifications';
 import {camera} from "../../constants/PatientImages";
 import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
-import {convert24hto12h, getTimer} from "../../../utils/utilities";
+import {convert24hto12h, getTimer} from "../../utils/utilities";
 
 const DoctorAppointmentsCard = (props) => {
 

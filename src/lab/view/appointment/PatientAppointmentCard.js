@@ -6,7 +6,7 @@ import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
 const PatientAppointmentCard = (props) => {
   return (
     <>
-    <Card className="patient-appointment-container" onClick={() =>  props.history.push(`/doctor/appointmentDetail/${props.id}`)}>
+    <Card className="patient-appointment-container" onClick={() =>  props.history.push(`/upload`)}>
         <div className="image-container">
             <img src={props?.image} style={{
                 maxWidth:"100%",
@@ -17,9 +17,6 @@ const PatientAppointmentCard = (props) => {
             <div style={{display:"flex", flexDirection:"row", marginBottom: "10px"}}>
                 <div style={{flex:1}}>
                     <span className="patient-name">{props.name}</span>
-                </div>
-                <div style={{flex:1}}>
-                    <div className="status-info">{props.status}</div>
                 </div>
             </div>
 

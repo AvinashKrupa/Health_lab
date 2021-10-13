@@ -29,7 +29,7 @@ import './not_found_page.scss';
 // import './slotForDoctor.scss';
 // import './doctorRegistrationPage.scss';
 // import './profilePictureColumn.scss';
-// import './dashboard.scss';
+import './dashboard.scss';
 // import './reports.scss';
 // import './videoMeeting.scss';
 // import './upcoming_appointments.scss';
@@ -40,7 +40,7 @@ import './not_found_page.scss';
 
 // Common
 import './text_area.scss';
-// import './common.scss';
+import './common.scss';
 // import './about-us.scss';
 import '../../lab/styles/global.scss';
 import './PDF_view.scss';
