@@ -33,7 +33,7 @@ import './dashboard.scss';
 // import './reports.scss';
 // import './videoMeeting.scss';
 // import './upcoming_appointments.scss';
-// import './editProfile.scss';
+import './editProfile.scss';
 // import './autosuggest.scss';
 // import './AddPrescription.scss';
 // import './updateSchedule.scss';

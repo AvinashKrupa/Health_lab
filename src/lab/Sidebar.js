@@ -2,6 +2,8 @@ import SideNav, {NavIcon, NavItem, NavText} from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import {clearSession, getData} from "./storage/LocalStorage/LocalAsyncStorage";
 import { withRouter } from 'react-router-dom'
+import {back_icon, upload_icon} from "../../src/lab/constants/DoctorImages";
+import React from "react";
 
 const sidebar = ['home', 'appointments', 'profile', 'reports']
 
@@ -52,7 +54,12 @@ debugger
                     </NavItem>
                     <NavItem eventKey="home">
                         <NavIcon>
-                            <i className="fa fa-fw fa-home" style={{fontSize: '1.65em'}}/>
+                            <div style={{display:"flex", flexDirection:"column", alignItems: "center"}}>
+                                <img alt='upload' src={upload_icon} style={{width:"28px",height:"44px",}}></img>
+                                {/*<span>Upload</span>*/}
+                            </div>
+
+                            {/*<i className="fa fa-fw fa-home" style={{fontSize: '1.65em'}}/>*/}
                         </NavIcon>
                         <NavText>
                             Home

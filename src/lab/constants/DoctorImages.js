@@ -11,6 +11,7 @@ import mic_off_icon from "../../lab/assets/mic-off.svg";
 import camera_off_icon from "../../lab/assets/camera-off.svg";
 import camera_on_icon from "../../lab/assets/camera-on.svg";
 import delete_icon from "../../lab/assets/delete-doctor.svg";
+import upload_icon from "../../lab/assets/upload.svg";
 
 export {
     doctor,
@@ -25,5 +26,6 @@ export {
     camera_on_icon,
     mic_on_icon,
     mic_off_icon,
-    delete_icon
+    delete_icon,
+    upload_icon
 };
