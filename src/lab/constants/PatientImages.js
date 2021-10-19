@@ -26,11 +26,13 @@ import send from "../assets/send.png";
 import upload from "../assets/upload.svg"
 import pdf from "../assets/pdf.png"
 import uploadCamera from '../assets/uploadCamera.png'
+import login_art from '../assets/login_art.svg';
+import logo_big1 from '../assets/logo_big1.svg';
 
 
 export { group, logo, frame, doctor, plant, phone,
          doctorCard, tooth, heart, brain, arrowRight,
          filter, minus, icon_badge, icon_man, icon_money,
          camera, meeting, help, blackArrow, calendar, patientIcon,
-         copy, InviteImage, send,upload, pdf, uploadCamera
+         copy, InviteImage, send,upload, pdf, uploadCamera,login_art,logo_big1
        };

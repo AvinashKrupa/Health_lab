@@ -1,9 +1,5 @@
-import React, { useContext } from 'react';
-import { Route, Redirect } from 'react-router-dom';
-import {AuthContext} from '../context/AuthContextProvider';
-import { getData } from '../storage/LocalStorage/LocalAsyncStorage';
-import jwt_decode from "jwt-decode";
-import MainView from '../MainView';
+import React from 'react';
+import {Route} from 'react-router-dom';
 
 const basicRoutes = ['/', '/otp']
 
