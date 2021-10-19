@@ -5,29 +5,30 @@ const AuthContext = createContext();
 class AuthContextProvider extends Component {
   state = {
     isAuthenticated: false,
-    phone: '',
-    type: '1',
+    email: '',
+    type: '3',
   }
 
   setAuth = (isAuthenticated) => {
     this.setState({ isAuthenticated });
   }
 
-  setPhone = (phone) => {
-    this.setState({ phone });
+  setEmail = (email) => {
+    this.setState({ email });
   }
 
   setType = (type) => {
     this.setState({ type });
   }
 
-  render() { 
+  render() {
+    console.info('amit AuthContextProvider :', this.state);
     return (
-      <AuthContext.Provider value={{...this.state, setAuth: this.setAuth, setPhone: this.setPhone}}>
+      <AuthContext.Provider value={{...this.state, setAuth: this.setAuth, setEmail: this.setEmail}}>
         {this.props.children}
       </AuthContext.Provider>
     );
   }
 }
- 
+
 export  {AuthContextProvider, AuthContext};
