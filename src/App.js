@@ -4,7 +4,6 @@ import firebase, {FIREBASE_VAPID_KEY} from "./lab/notification/firebase";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import PrivateRoute from './lab/hoc/PrivateRoute';
 import LabLogin from './lab/view/Login';
-import OTP from './lab/view/OTP';
 import Homepage from "./lab/view/appointment/Homepage";
 import PatientProfile from "./lab/view/Profile/PatientProfile";
 import PDFViewer from "./../src/lab/commonComponent/PDFViewerScreen";
@@ -35,7 +34,6 @@ function App() {
         <BrowserRouter>
           <Switch>
             <Route exact path="/" component={LabLogin}/>
-            <PrivateRoute exact path='/otp' component={OTP}/>
             <MainView>
               <Switch>
                 <PrivateRoute exact path='/home' component={Homepage}/>

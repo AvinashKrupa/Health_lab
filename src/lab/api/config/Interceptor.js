@@ -86,8 +86,7 @@ instance.interceptors.response.use(
             // return axios(originalRequest);
           }
         }).catch(function (error) {
-          const type = getData('USER_TYPE');
-          type === '1' ? window.location.href="/" : window.location.href="/doctor";
+           window.location.href="/";
         })
     }
     return Promise.reject(error);

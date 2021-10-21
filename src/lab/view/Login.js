@@ -45,6 +45,14 @@ const Login = ({history}) => {
                     addToast(response.data.message, {appearance: 'success'});
                     history.push('/home');
                     setShowLoader(false);
+                    const session = response.data.data['session'];
+                    if (session != null) {
+                        storeData('ACCESS_TOKEN', session.access_token);
+                        storeData('REFRESH_TOKEN', session.refresh_token);
+                        history.push('/home');
+                    } else {
+                        history.push('/')
+                    }
                 } else {
                     addToast(response.data.message, {appearance: 'error'});
                     setShowLoader(false);
