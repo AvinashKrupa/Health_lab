@@ -8,52 +8,42 @@ import {AuthContext} from '../context/AuthContextProvider';
 import CustomButton from '../commonComponent/Button';
 import {useToasts} from 'react-toast-notifications';
 import {storeData} from "../storage/LocalStorage/LocalAsyncStorage";
-import Spinner from "../commonComponent/Spinner";
+import {getPushToken} from "../notification/utilities";
 
 const Login = ({history}) => {
     let timer = null;
     const {addToast} = useToasts();
     const authContext = useContext(AuthContext);
-    const [mobileNumber, setMobileNumber] = useState(authContext.phone ? authContext.phone : '');
-    const [mobileNumberError, setMobileNumberError] = useState('');
-    const [showLoader, setShowLoader] = useState(false);
-    const [loginId, setLoginId] = useState('');
+    const [loginId, setLoginId] = useState(authContext.email ? authContext.email : '');
     const [password, setPassword] = useState('');
+    const [emailAddressError, setEmailAddressError] = useState('');
+    const [showLoader, setShowLoader] = useState(false);
 
     const handleOnChange = (e) => {
-        if (isNaN(Number(e.target.value))) {
-            setMobileNumberError('Please enter a valid mobile number')
+        if (validateEmail(e.target.value)) {
+            setEmailAddressError('Please enter a valid email address')
         } else {
-            setMobileNumberError('')
+            setEmailAddressError('')
         }
     }
 
-    const onClick = () => {
-        const numbers = Array.from(mobileNumber);
-        const isNumber = (currentValue) => !isNaN(currentValue);
+    function validateEmail(email) {
+        const regExp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return regExp.test(email);
+    }
 
-        if (!numbers.every(isNumber) || numbers.length < 10 || numbers.length > 10) {
-            return;
-        }
-
-        // let params = {
-        //     mobile_number: mobileNumber,
-        //     country_code: '+91',
-        //     type: 1
-        // };
-        let params = {"email":"admin@healthuno.com","password":"Admin@1234"};
-
-        authContext.setEmail(mobileNumber);
-        // authContext.setAuth(true);
-        // authContext.setType('0');
+    const onClick = async () => {
+        const foundPushToken = await getPushToken();
+        let params = {"email":loginId,"password":password, device_token: foundPushToken};
+        authContext.setEmail(loginId);
         setShowLoader(true);
-        post(API.SENDOTP, params, true)
+        post(API.LOGIN, params, true)
             .then(response => {
                 if (response.status === 200) {
-                    storeData('USER_TYPE', 2)
+                    console.log('amit debug :', response.data);
+                    storeData('USER_TYPE', Number(response?.data?.data?.user?.profile_types[0]) || 4)
                     addToast(response.data.message, {appearance: 'success'});
-                    history.push('/otp');
-                    // history.push('/home');
+                    history.push('/home');
                     setShowLoader(false);
                 } else {
                     addToast(response.data.message, {appearance: 'error'});
@@ -112,8 +102,8 @@ const Login = ({history}) => {
                                         <Input label="Password" type="password" placeholder="Enter your password" value={password}
                                                onChange={setPassword}/>
                                     </Col>
-                                    {!!mobileNumberError && <div style={{textAlign: "center"}}
-                                                                 className="error-text">{mobileNumberError}</div>}
+                                    {!!emailAddressError && <div style={{textAlign: "center"}}
+                                                                 className="error-text">{emailAddressError}</div>}
                                     <div style={{marginTop:"30px"}}>
                                         {showLoader && <CustomButton
                                             type="submit"
@@ -127,7 +117,6 @@ const Login = ({history}) => {
                                         {!showLoader && <CustomButton
                                             type="submit"
                                             className={'login-btn'}
-                                            disabled={!(mobileNumber.length === 10 && !mobileNumberError)}
                                             onClick={debounce}
                                             text={'Continue'}
                                         ></CustomButton>}

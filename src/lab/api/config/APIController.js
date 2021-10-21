@@ -2,7 +2,7 @@ import instance from './Interceptor';
 import qs from 'qs';
 
 export const API = {
-  SENDOTP: 'auth/sendOtp',
+  LOGIN: 'auth/login',
   VERIFYOTP: 'auth/verifyOtp',
   REGISTERPATIENT: 'auth/registerPatient',
   GETCOUNTRY: 'country',
