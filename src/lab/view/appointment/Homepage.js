@@ -177,8 +177,9 @@ const Homepage = (props) => {
                         )
                       })}
                       {!appointmentLoaderStatus && !upcomingAppointments.length &&
-                      <div className="empty-list-container">
-                        <h4>No patient found</h4>
+                      <div className="empty-list-container_center">
+                        {!searchText && <h4>Please type patient name to start searching! </h4>}
+                        {!!searchText && <h4>No patient found</h4>}
                       </div>
                       }
                     </>
