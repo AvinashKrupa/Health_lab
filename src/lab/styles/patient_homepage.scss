@@ -16,7 +16,7 @@ body {
     text-align: left;
     color: rgba(27, 27, 27, 1);
   }
-  
+
   .patient-homepage-text-h5 {
     height: 20px;
     width: 112px;
@@ -29,7 +29,7 @@ body {
     margin-bottom: auto;
     margin-left: auto;
   }
-  
+
   .patient-homepage-link-text {
     height: 20px;
     width: 61px;
@@ -70,7 +70,7 @@ body {
   font-size: 11px;
   margin-bottom: 30px;
  }
-     
+
  .sidebarMenu li a{
   color: #1B1B1B;
   text-decoration: none;
@@ -105,8 +105,8 @@ body {
 
 .sidenav---sidenav---_2tBP {
   background: #F3F3F3 !important;
-  
-  
+
+
 }
 .sidenav---sidenav-toggle---1KRjR .sidenav---icon-bar---u1f02 {
   background-color: #000 !important;
@@ -146,7 +146,7 @@ font-size: 30px;
 }
 
 
-  
+
   .patient-homepage-motion-images {
     height: 252px;
     width: 1252px;
@@ -154,7 +154,7 @@ font-size: 30px;
     background: linear-gradient(92.07deg, #28a3da 0.26%, #3085ab 99.17%);
     margin: auto;
   }
-  
+
   .patient-homepage-search {
     height: 50px;
     width: 650px;
@@ -167,7 +167,7 @@ font-size: 30px;
     letter-spacing: -0.420000284910202px;
     text-align: left;
   }
-  
+
 
 
   // landingPrePage
@@ -250,7 +250,7 @@ font-size: 30px;
       background-color: unset !important;
       border-color: unset !important;
     }
-       
+
   }
 
 
@@ -258,15 +258,15 @@ font-size: 30px;
 
 
 
-     
+
   @media screen and (device-aspect-ratio: 40/71) {
     .speciality-card-container {
       width: 119px !important;
       margin: 7px 5px !important;
     }
 
-   
-    
+
+
   }
 
   @media only screen and (max-width: 767px) {
@@ -289,7 +289,7 @@ font-size: 30px;
     }
     .sidebarMenu {
       background: transparent;
-     
+
   }
   .searchRow {
     margin-top: 25px !important;
@@ -374,12 +374,12 @@ width: 23px!important;
 
 
 
-  
+
 }
 
-@media only screen 
-and (min-device-width : 414px) 
-and (max-device-width : 736px) { 
+@media only screen
+and (min-device-width : 414px)
+and (max-device-width : 736px) {
   nav.sidenav---sidenav---_2tBP.sidenav---collapsed---LQDEv .sidenav---sidenav-toggle---1KRjR {
     position: absolute;
     top: 0px;
@@ -391,11 +391,11 @@ and (max-device-width : 736px) {
 
 
 }
- 
 
 
 
-  @media only screen and (max-width: 480px) { 
+
+  @media only screen and (max-width: 480px) {
     .carousel_container {
       height: 207px !important;
       width: 350px !important;
@@ -406,9 +406,9 @@ and (max-device-width : 736px) {
         margin-left: 70px !important;
       }
     }
-    
+
   }
-  @media only screen and (max-width: 376px) { 
+  @media only screen and (max-width: 376px) {
     .carousel_container {
       height: 207px !important;
       width: 314px !important;
@@ -420,26 +420,26 @@ and (max-device-width : 736px) {
       }
     }
   }
-    
- 
-  @media only screen 
-  and (min-device-width : 300px) 
-  and (max-device-width : 374px) { 
-  
+
+
+  @media only screen
+  and (min-device-width : 300px)
+  and (max-device-width : 374px) {
+
   .doctor-card-image{width: 82px !important;
     margin-right: 14px !important;
   }
-  
+
   .react-multi-carousel-list .carousel_container {
     width: 280px !important;
 }
 
-  
+
   .searchRow {
     margin-top: 38px !important;
     width: 98% !important;
   }
-  
+
 
   .search-container button.btn.btn-primary{
     margin-top: 0px !important;
@@ -447,11 +447,11 @@ and (max-device-width : 736px) {
     right: 10px;
     position: fixed;
     z-index: 2;
-  
+
   }
   .search-container button.btn.btn-primary img{
   height: 23px;
   width: 23px
   }
-  
+
   }

@@ -16,12 +16,12 @@ const PatientAppointmentCard = (props) => {
         <div className="content-container">
             <div style={{display:"flex", flexDirection:"row", marginBottom: "10px"}}>
                 <div style={{flex:1}}>
-                    <span className="patient-name">{props.name}</span>
+                    <div className="patient-name text-tooltip">{props.name}</div>
                 </div>
             </div>
 
             <div style={{marginBottom: "15px"}}>
-                <span className="purpose-info">Purpose: <span className="grey">{props.purpose}</span></span>
+                <span className="dr-name-info">Doctor: <span className="grey">{props.dr_name}</span></span>
             </div>
             <div style={{display:"flex", flexDirection:"row",}}>
             <div style={{display:"flex", flexDirection:"row", justifyContent: "space-between", alignItems: "baseline"}}>

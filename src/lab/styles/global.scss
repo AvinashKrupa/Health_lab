@@ -1,4 +1,15 @@
 body {
+  .text-tooltip {
+    text-overflow: ellipsis;
+    overflow : hidden;
+    white-space: nowrap;
+  }
+
+  .text-tooltip:hover {
+    text-overflow: clip;
+    white-space: normal;
+    word-break: break-all;
+  }
   .btn-primary.disabled, .btn-primary:disabled {
     color: #fff;
     background-color: #27a3da;

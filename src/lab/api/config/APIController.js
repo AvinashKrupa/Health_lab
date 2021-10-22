@@ -3,6 +3,7 @@ import qs from 'qs';
 
 export const API = {
   LOGIN: 'auth/login',
+  SEARCH_PATIENTS_API: 'lab/getAppointments',
   VERIFYOTP: 'auth/verifyOtp',
   REGISTERPATIENT: 'auth/registerPatient',
   GETCOUNTRY: 'country',
@@ -32,7 +33,6 @@ export const API = {
   REGISTER_DOCTOR: 'auth/registerDoctor',
   GET_DOCTOR_DETAILS: 'doctor/getDoctorDetails',
   DOCTOR_HOME_CONTENT_API: 'doctor/homeContent',
-  DOCTOR_GET_APPOINTMENTS_API: 'doctor/getAppointments',
   APPOINTMENT_DETAIL_API: 'appointment/getDetails',
   REMOVE_ADDITIONAL_DOCTOR: 'appointment/removeAdditionalDoctor',
   ADD_ADDITIONAL_DOCTOR: 'appointment/addDoctor',
