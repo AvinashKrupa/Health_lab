@@ -6,7 +6,20 @@ import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
 const PatientAppointmentCard = (props) => {
   return (
     <>
-    <Card className="patient-appointment-container" onClick={() =>  props.history.push(`/upload`)}>
+    <Card className="patient-appointment-container" onClick={() => props.history.push({
+            pathname: '/upload',
+            state: {
+                reportInfo:{
+                    dp:props?.image,
+                    patientName:props.name,
+                    doctorName: props.dr_name,
+                    appointmentId: props.appointmentId,
+                    patientId: props.patientId,
+                    onTime: props.onTime,
+                    onDate: props.onDate,
+                }
+            }
+        })}>
         <div className="image-container">
             <img src={props?.image} style={{
                 maxWidth:"100%",

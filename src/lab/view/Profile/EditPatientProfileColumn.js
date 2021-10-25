@@ -64,18 +64,15 @@ const EditProfilePictureColumn = (props) => {
     return (
         <Container className="profile-left-Column">
             <Row>
-                <h2 className="profile-tile-text">Profile</h2>
-            </Row>
-            <Row>
                 <Image src={image? image: doctor} className="profile-picture-image"/>
                 <UploadImage getImage={handleImage}  className='edit-fa-camera'/>
             </Row>
             <Row className="profile-container">
                 <Col lg="12">
-                    <span className="doctor-name">{props.doctorName}</span>
+                    <span className="doctor-name">{props.patientName}</span>
                 </Col>
                 <Col lg="12">
-                    <span className="doctor-detail">+91 - {props.doctorMobile} | HealthUno Id: </span>
+                    <span className="doctor-detail">+91 - {props.patientMobile} | HealthUno Id: </span>
                 </Col>
                 <Col>
                     <Row style={{cursor: 'pointer'}}>
