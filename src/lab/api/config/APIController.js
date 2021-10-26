@@ -2,19 +2,23 @@ import instance from './Interceptor';
 import qs from 'qs';
 
 export const API = {
+  /**
+   * Lab related APIS
+   */
   LOGIN: 'auth/login',
   SEARCH_PATIENTS_API: 'lab/getAppointments',
   LOGOUT: 'auth/logout',
-  VERIFYOTP: 'auth/verifyOtp',
-  REGISTERPATIENT: 'auth/registerPatient',
-  GETCOUNTRY: 'country',
+  GET_DEPARTMENTS: 'departments',
+  UPLOAD_REPORT: 'lab/uploadReport',
+
+
   GETCITY: 'city',
   GETSTATE: 'state',
   GETHOMECONTENT: 'patient/homeContent',
   GETTOPCONSULTANT: 'patient/getTopConsultants',
   GETLANGUAGE: 'languages',
   FILEUPLOAD: 'fileUpload',
-  GETDEPARTMENTS: 'departments',
+
   GETSPECIALITIES: 'specialities',
   GETQUALIFICATIONS: 'qualifications',
   GETSLOTS: 'slot/getSlots',
@@ -25,7 +29,7 @@ export const API = {
   GETAPPOINTMENTS: 'patient/getAppointments',
   CANCELAPPOINTMENT: 'patient/cancelAppointment',
   GETMESSAGES: 'chat/getMessages',
-  UPLOADREPORT: 'patient/uploadReport',
+
   GETREPORTS: 'patient/getReports',
   GET_PRESCRIPTIONS: 'patient/getPrescriptions',
   /**
