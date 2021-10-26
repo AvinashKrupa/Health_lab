@@ -56,16 +56,16 @@ const UploadReport = (props) => {
   };
 
   const thumbs = files.map((file) => (
-    <div style={thumb} key={file.name}>
-      <div style={thumbInner}>
-        {console.log(file.type, file.name)}
-        <img
-          src={file.type === "application/pdf" ? pdf : file.preview}
-          style={img}
-          alt="upload-report"
-        />
+      <div style={thumb} key={file.name}>
+        <div style={thumbInner}>
+          {console.log(file.type, file.name)}
+          <img
+              src={file.type === "application/pdf" ? pdf : file.preview}
+              style={img}
+              alt="upload-report"
+          />
+        </div>
       </div>
-    </div>
   ));
 
   const isValidData = () => {
@@ -96,16 +96,16 @@ const UploadReport = (props) => {
       bodyFormData.append("date", `${uploadDate}:00.000+00:00`);
 
       uploadImageWithData(API.UPLOADREPORT, bodyFormData)
-        .then((response) => {
-          setReportName("");
-          setReportType("");
-          setUploadDate("");
-          setFiles([]);
-          console.log("File upload response: ", response);
-        })
-        .catch((error) => {
-          console.log("File upload error: ", error);
-        });
+          .then((response) => {
+            setReportName("");
+            setReportType("");
+            setUploadDate("");
+            setFiles([]);
+            console.log("File upload response: ", response);
+          })
+          .catch((error) => {
+            console.log("File upload error: ", error);
+          });
     }
   };
 
@@ -118,13 +118,13 @@ const UploadReport = (props) => {
         data: formData,
         headers: { Authorization: "Bearer " + token },
       })
-        .then((response) => {
-          addToast(response.data.message, { appearance: "success" });
-          resolve(response.data);
-        })
-        .catch((err) => {
-          reject(err);
-        });
+          .then((response) => {
+            addToast(response.data.message, { appearance: "success" });
+            resolve(response.data);
+          })
+          .catch((err) => {
+            reject(err);
+          });
     });
   };
 
@@ -234,112 +234,33 @@ const UploadReport = (props) => {
   }
 
   return (
-    <>
-      <Row></Row>
-      <Row>
-        <Col lg="12">
-          <div className="upload-report">
-            <Row className="content">
-              <Col lg="6">
-                <Input
-                  label="Report Name"
-                  type="text"
-                  placeholder="Consultation Report"
-                  value={reportName}
-                  onChange={setReportName}
-                />
-              </Col>
-              <Col lg="6">
-                <br />
-                <Form.Label>Upload Date</Form.Label>
-                <br />
-                <Form.Control
-                  type="datetime-local"
-                  placeholder="05-July-2021"
-                  onKeyDown={(e) => e.preventDefault()}
-                  value={uploadDate}
-                  onChange={setUploadDate}
-                />
-              </Col>
-            </Row>
-            <div className="report-type">
-              <Select
-                label="Report Type"
-                defaultValue="Select"
-                id="report-type"
-                options={reportOptions}
-                handleSelect={setReportType}
-              />
-            </div>
-
-            <div className="upload-file">
-              {files.map((fileName) => (
-                <div className="uploaded" key={fileName.name}>
-                  <div>
-                    <p className="file-name" key={fileName}>
-                      {fileName.name}{" "}
-                    </p>
-                    <p>{moment(fileName.lastModifiedDate).format("ll")}</p>
-                  </div>
-                  <button className="view-button" onClick={() => setFiles([])}>
-                    Delete
-                  </button>
-                </div>
-              ))}
-              <Dropzone
-                onDrop={(acceptedFiles) => {
-                  setError(false);
-                  setFiles(
-                    acceptedFiles.map((file) =>
-                      Object.assign(file, {
-                        preview: URL.createObjectURL(file),
-                      })
-                    )
-                  );
-                }}
-                accept="image/jpeg,.pdf"
-                maxFiles={1}
-                onDropRejected={(fileRejections, event) => {
-                  setError(true);
-                }}
-              >
-                {({ getRootProps, getInputProps }) => (
-                  <div {...getRootProps()}>
-                    <input {...getInputProps()} />
-                    {files.length === 0 && (
-                      <div className="upload-text">
-                        <Image src={upload} alt="upload" />
-                        <p>Drag and Drop the files here</p>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </Dropzone>
-            </div>
-
-            <div className="note">
-              Please upload report in pdf or jpeg format
-            </div>
-            {error && (
-              <div className="note" style={{ color: "red", fontSize: "18px" }}>
-                Please upload single report file
+      <>
+        <Row></Row>
+        <Row>
+          <Col lg="12">
+            <div className="upload-report">
+              {renderUploadReportComponent()}
+              {files.length > 0 && <h4>Preview</h4>}
+              <aside style={thumbsContainer}>{thumbs}</aside>
+              <div className="add-more-report-button" onClick={() =>
+                  null
+              }>
+                <div><Image src={plus_icon}/></div>
+                <div className="add-more-report-text">Add more</div>
               </div>
-            )}
-            {files.length > 0 && <h4>Preview</h4>}
-            <aside style={thumbsContainer}>{thumbs}</aside>
-            <div className="button-div">
-              <button
-                className="upload-button "
-                type="button"
-                onClick={uploadReport}
-              >
-                Upload
-              </button>
+              <div className="button-div">
+                <button
+                    className="upload-button "
+                    type="button"
+                    onClick={uploadReport}
+                >
+                  Upload
+                </button>
+              </div>
             </div>
-          </div>
-        </Col>
-      </Row>
-    </>
+          </Col>
+        </Row>
+      </>
   );
 };
 

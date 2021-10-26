@@ -30,6 +30,8 @@ import './not_found_page.scss';
 // import './doctorRegistrationPage.scss';
 // import './profilePictureColumn.scss';
 import './dashboard.scss';
+import './multiStepForm.scss';
+import './profilePictureColumn.scss';
 // import './reports.scss';
 // import './videoMeeting.scss';
 // import './upcoming_appointments.scss';

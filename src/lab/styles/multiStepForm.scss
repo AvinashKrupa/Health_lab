@@ -1,0 +1,64 @@
+.form-wizard {
+  padding: 40px;
+  @media only screen and (max-width: 768px) {
+    padding: 100px;
+}
+  @media only screen and (max-width: 414px) {
+  padding: 40px;
+}
+  .multistepform-button {
+    margin-top: 148px;
+    width: 335px;
+    border-radius: 8px;
+    background: rgba(40, 163, 218, 1);
+    margin-bottom: 55px;
+}
+
+  .multistepform-h3 {
+    height: 29px;
+    left: 110px;
+    top: 112px;
+    border-radius: nullpx;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 29px;
+    letter-spacing: -0.30000001192092896px;
+    text-align: left;
+    color: rgba(27, 27, 27, 1);
+    margin-bottom: 54px;
+    margin-left: 62px;
+  }
+
+  .multistepform-image {
+    left: 28px;
+    top: 9px;
+    border-radius: 0px;
+    margin-right: 24px;
+  }
+
+  .form-wizard-text-area {
+    .container {
+      padding: initial;
+      margin-top: 24px;
+    }
+  }
+
+  .form-btn {
+    text-align: center;
+  }
+}
+
+.form-control, .form-select, .dropdown-toggle {
+  height: 50px !important;
+}
+
+.textarea-field {
+  height: 150px !important;
+}
+
+.input-group {
+  .H4 {
+    padding-top: 24px;
+  }
+}
