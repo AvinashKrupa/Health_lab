@@ -8,13 +8,11 @@ const MainView = (props) => {
   return (
     <>
       <Row>
-        <Col lg="1" md='1' sm="1" xs="1"> 
+        <Col lg="1" md='1' sm="1" xs="1">
             <Sidebar></Sidebar>
         </Col>
         {props.children}
-        <Col lg="1" sm="1" xs="1" />
       </Row>
-      <Grid container spacing={1}></Grid>
     </>
   );
 };

@@ -10,7 +10,6 @@ const PatientProfile = (props) => {
     const [patientData, setPatientData] = useState({});
 
     useEffect(() => {
-        debugger
         if (!props.location?.state?.reportInfo) {
             props.history.goBack();
             return;
@@ -20,7 +19,7 @@ const PatientProfile = (props) => {
     }, []);
 
     return (
-        <Col lg="10" sm="10" xs="10">
+        <Col lg="11" sm="11" xs="11">
             <Row>
                 <Col lg="2">
                     <Row className='back-navigation'>
@@ -47,7 +46,7 @@ const PatientProfile = (props) => {
 
                     />
                 </Col>
-                <Col lg="9" id="second-page">
+                <Col lg="10" id="second-page">
                     <UploadReport></UploadReport>
                 </Col>
             </Row>
