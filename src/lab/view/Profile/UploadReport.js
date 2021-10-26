@@ -1,3 +1,4 @@
+import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
 import Input from "../../commonComponent/Input";
 import Select from "../../commonComponent/Select";
 import {Col, Form, Image, Row} from "react-bootstrap";
@@ -26,6 +27,13 @@ const UploadReport = (props) => {
 
   let reportOptions = ["MRI", "CT Scan ", "Blood Test"];
 
+  useEffect( () => {
+    const accessToken = getData('ACCESS_TOKEN');
+    if (!accessToken) {
+      props.history.push(`/`);
+      return;
+    }
+  }, []);
   useEffect(() => {
     getDepartment();
     return () => {
@@ -167,6 +175,7 @@ const UploadReport = (props) => {
   }
 
   const renderUploadReportComponent = () => {
+    const userType = JSON.parse(getData('USER_TYPE'));
     return (<>
       <div className="upload-report1">
         {/*<Row className="content">*/}
@@ -204,14 +213,14 @@ const UploadReport = (props) => {
             />
           </Col>
           <Col lg="6">
-            <KeyValueSelector
+            {userType ===5 && <KeyValueSelector
                 label="Department"
                 id="department"
                 value={getDepartmentValue(department)}
                 defaultValue="Select department"
                 options={departments}
                 handleSelect={setDepartmentValue}
-            />
+            />}
           </Col>
         </Row>
 
@@ -303,4 +312,4 @@ const UploadReport = (props) => {
   );
 };
 
-export default UploadReport;
+export default withRouter(UploadReport);

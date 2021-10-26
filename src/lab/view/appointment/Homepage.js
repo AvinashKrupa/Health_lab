@@ -8,6 +8,7 @@ import useSearchStore from '../../store/searchStore';
 import SearchInputWithIcon from '../../commonComponent/SearchInputWithIcon';
 import PatientAppointmentCard from "./PatientAppointmentCard";
 import Spinner from "../../commonComponent/Spinner";
+import {getData} from "../../storage/LocalStorage/LocalAsyncStorage";
 
 const Homepage = (props) => {
     let timer = null;
@@ -15,6 +16,14 @@ const Homepage = (props) => {
     let [searchText, setSearchText] = useState(useSearchStore(state => state.searchText));
     let [appointmentLoaderStatus, setAppointmentLoaderStatus] = useState(false);
     const [appointments, setAppointments] = useState([]);
+
+    useEffect( () => {
+        const accessToken = getData('ACCESS_TOKEN');
+        if (!accessToken) {
+            props.history.push(`/`);
+            return;
+        }
+    }, []);
 
     useEffect(() => {
         if (searchText) {
