@@ -1,44 +1,17 @@
-import AnchorLink from 'react-anchor-link-smooth-scroll';
-import { useState, useEffect } from "react";
+import React, {useEffect, useState} from "react";
 import {doctor} from "../../constants/DoctorImages";
 import {Col, Container, Image, Row} from "react-bootstrap";
-import React from "react";
-import ProfileButton from "../../commonComponent/ProfileButton";
-import { withRouter } from 'react-router-dom'
-import UploadImage from "../../commonComponent/Upload"
-import {API, get, post} from "../../api/config/APIController";
+import {withRouter} from 'react-router-dom'
+import {API, get} from "../../api/config/APIController";
 import {storeData} from "../../storage/LocalStorage/LocalAsyncStorage";
 import {useToasts} from "react-toast-notifications";
 
 const EditProfilePictureColumn = (props) => {
-    const[ image, setImage ]= useState(props.img);
     const {addToast} = useToasts();
-    function updateUserProfile(file) {
-        let params = {
-          dp: file,
-        };
-        post(API.UPDATE_PROFILE, params, true)
-          .then((response) => {
-            if (response.status === 200) {
-              addToast(response.data.message, { appearance: "success" });
-            } else {
-              addToast(response.data.message, { appearance: "error" });
-            }
-            props.setReloadSideColumn(true);
-          })
-          .catch((error) => {
-            addToast(error.response.data.message, { appearance: "error" });
-          });
-      }
 
-      const handleImage = (file) => {
-        setImage(file);
-        updateUserProfile(file);
-        props.setProfilePic(file);
-      };
     useEffect(() => {
         getUserProfile()
-        setTimeout(()=>props.setReloadSideColumn(false),1000)
+        setTimeout(() => props.setReloadSideColumn(false), 1000)
     }, [props.reloadSideColumn]);
 
     function getUserProfile() {
@@ -50,7 +23,7 @@ const EditProfilePictureColumn = (props) => {
                     if (user) {
                         storeData('userInfo', JSON.stringify(user));
                     }
-                    if(additionalInfo) {
+                    if (additionalInfo) {
                         storeData('additional_info', JSON.stringify(additionalInfo));
                     }
                 } else {
@@ -64,8 +37,7 @@ const EditProfilePictureColumn = (props) => {
     return (
         <Container className="profile-left-Column">
             <Row>
-                <Image src={image? image: doctor} className="profile-picture-image"/>
-                <UploadImage getImage={handleImage}  className='edit-fa-camera'/>
+                <Image src={props.img ? props.img : doctor} className="profile-picture-image"/>
             </Row>
             <Row className="profile-container">
                 <Col lg="12">
@@ -76,9 +48,10 @@ const EditProfilePictureColumn = (props) => {
                 </Col>
                 <Col>
                     <Row style={{cursor: 'pointer'}}>
-                        {/*<Col lg='3' sm='1' xs='1'></Col>*/}
                         <Col className="button-section">
-
+                            <span className="doctor-detail">{`Doctor: ${props.doctorName}`}</span>
+                            <span className="doctor-detail">{`Time: ${props.appointmentTime}`}</span>
+                            <span className="doctor-detail">{`Date: ${props.appointmentDate}`}</span>
                         </Col>
                     </Row>
                 </Col>

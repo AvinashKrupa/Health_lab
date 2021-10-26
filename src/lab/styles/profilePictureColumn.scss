@@ -1,0 +1,38 @@
+.profile-picture-image {
+  width: 150px;
+  height: 150px;
+  padding: 0px;
+  margin: auto;
+  margin-bottom: 24px;
+
+
+  @media only screen and (max-width: 768px) {
+      width: 150px;
+  }
+}
+
+.profile-picture-text {
+  letter-spacing: -0.30000001192092896px;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.profile-picture-text-small {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.30000001192092896px;
+  text-align: center;
+}
+.fa-camera {
+  position: relative ;
+  left: 155px;
+  bottom: 125px;
+
+  @media only screen and (max-width: 375px) {
+     left: 100px;
+  }
+  @media only screen and (max-width: 414px) {
+    left: 120px;
+  }
+
+}
