@@ -1,7 +1,7 @@
 import Input from "../../commonComponent/Input";
 import Select from "../../commonComponent/Select";
 import { Row, Form, Col, Image } from "react-bootstrap";
-import { useState } from "react";
+import React, { useState } from "react";
 import { upload } from "../../constants/PatientImages";
 import moment from "moment";
 import Dropzone from "react-dropzone";
@@ -12,6 +12,7 @@ import axios from "axios";
 import Constants from "../../constants";
 import { getData } from "../../storage/LocalStorage/LocalAsyncStorage";
 import { isEmpty } from "../../utils/Validators";
+import {plus_icon} from "../../constants/DoctorImages";
 
 const UploadReport = (props) => {
   const [reportName, setReportName] = useState("");
@@ -22,6 +23,7 @@ const UploadReport = (props) => {
   const { addToast } = useToasts();
 
   let reportOptions = ["MRI", "CT Scan ", "Blood Test"];
+  let departmentOptions = ["Dermatology", "Anesthesiology", "Diagnostic radiology"];
 
   const thumbsContainer = {
     display: "flex",
@@ -125,6 +127,111 @@ const UploadReport = (props) => {
         });
     });
   };
+
+  const renderUploadReportComponent = () => {
+    return (<>
+      <div className="upload-report1">
+        {/*<Row className="content">*/}
+        <Row>
+          <Col lg="6">
+            <Input
+                label="Report Name"
+                type="text"
+                placeholder="Consultation Report"
+                value={reportName}
+                onChange={setReportName}
+            />
+          </Col>
+          <Col lg="6">
+            <br />
+            <Form.Label>Report Date</Form.Label>
+            <br />
+            <Form.Control type="datetime-local"
+                          value={uploadDate}
+                          onKeyDown={(e) => e.preventDefault()}
+                          onChange={(e) => setUploadDate(e.target.value)}
+
+            />
+          </Col>
+        </Row>
+        {/*<Row className="content">*/}
+        <Row>
+          <Col lg="6">
+            <Select
+                label="Report Type"
+                defaultValue="Select"
+                id="report-type"
+                options={reportOptions}
+                handleSelect={setReportType}
+            />
+          </Col>
+          <Col lg="6">
+            <Select
+                label="Department Name"
+                defaultValue="Select"
+                id="report-type"
+                options={departmentOptions}
+                handleSelect={setReportType}
+            />
+          </Col>
+        </Row>
+
+        <div className="upload-file">
+          {files.map((fileName) => (
+              <div className="uploaded" key={fileName.name}>
+                <div>
+                  <p className="file-name" key={fileName}>
+                    {fileName.name}{" "}
+                  </p>
+                  <p>{moment(fileName.lastModifiedDate).format("ll")}</p>
+                </div>
+                <button className="view-button" onClick={() => setFiles([])}>
+                  Delete
+                </button>
+              </div>
+          ))}
+          <Dropzone
+              onDrop={(acceptedFiles) => {
+                setError(false);
+                setFiles(
+                    acceptedFiles.map((file) =>
+                        Object.assign(file, {
+                          preview: URL.createObjectURL(file),
+                        })
+                    )
+                );
+              }}
+              accept="image/jpeg,.pdf"
+              maxFiles={1}
+              onDropRejected={(fileRejections, event) => {
+                setError(true);
+              }}
+          >
+            {({ getRootProps, getInputProps }) => (
+                <div {...getRootProps()}>
+                  <input {...getInputProps()} />
+                  {files.length === 0 && (
+                      <div className="upload-text">
+                        <Image src={upload} alt="upload" />
+                        <p>Drag and Drop the files here</p>
+                      </div>
+                  )}
+                </div>
+            )}
+          </Dropzone>
+        </div>
+
+        <div className="note">
+          Please upload report in pdf or jpeg format
+        </div>
+        {error && (
+            <div className="note" style={{ color: "red", fontSize: "18px" }}>
+              Please upload single report file
+            </div>
+        )}
+      </div>
+    </>)
+  }
 
   return (
     <>
