@@ -1,11 +1,7 @@
-import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
-import Input from "../../commonComponent/Input";
-import Select from "../../commonComponent/Select";
-import {Col, Form, Image, Row} from "react-bootstrap";
-import React, {useEffect, useState} from "react";
-import {pdf, upload} from "../../constants/PatientImages";
-import moment from "moment";
-import Dropzone from "react-dropzone";
+import {withRouter} from "react-router-dom/cjs/react-router-dom.min";
+import {Col, Image, Row} from "react-bootstrap";
+import React, {useEffect, useReducer, useState} from "react";
+import {pdf} from "../../constants/PatientImages";
 import {API, get, post} from "../../api/config/APIController";
 import {useToasts} from "react-toast-notifications";
 import axios from "axios";
@@ -13,21 +9,90 @@ import Constants from "../../constants";
 import {getData} from "../../storage/LocalStorage/LocalAsyncStorage";
 import {isEmpty} from "../../utils/Validators";
 import {plus_icon} from "../../constants/DoctorImages";
-import KeyValueSelector from "../../commonComponent/KeyValueSelector";
+
+import UploadReportCard from "./Components/UploadReportCard";
+
+export const ACTIONS = {
+  SET_REPORT_NAME: "SET_REPORT_NAME",
+  SET_REPORT_DATE: "SET_REPORT_DATE",
+  SET_REPORT_TYPE: "SET_REPORT_TYPE",
+  SET_DEPARTMENT: "SET_DEPARTMENT",
+  SET_REPORT_FILE: "SET_REPORT_FILE",
+  ADD_NEW_REPORT: "ADD_NEW_REPORT",
+  DELETE_NEW_REPORT: "DELETE_NEW_REPORT",
+};
+
 
 const UploadReport = (props) => {
   const [reportName, setReportName] = useState("");
   const [uploadDate, setUploadDate] = useState("");
   const [reportType, setReportType] = useState("");
   const [departments, setDepartments] = useState([]);
-  const [department, setDepartment] = useState('');
   const [error, setError] = useState(false);
   const [files, setFiles] = useState([]);
   const {addToast} = useToasts();
 
+  const reportObj = {
+    reportItem: {
+      reportName: "",
+      uploadDate: "",
+      reportType: "",
+      department: "",
+      file: [],
+    },
+    validationInfo: {
+      reportNameError: "",
+      uploadDateError: "",
+      reportTypeError: "",
+      departmentError: "",
+      fileError: "",
+    },
+  };
+
+  let initialState = [reportObj];
+  const [reportList, dispatch] = useReducer(reducer, initialState);
+
+  function reducer(reportList, action) {
+    switch (action.type) {
+      case ACTIONS.ADD_NEW_REPORT:
+        return [...reportList, action.payload];
+      case ACTIONS.DELETE_NEW_REPORT:
+        const tempReportObj = JSON.parse(
+            JSON.stringify(reportList)
+        );
+        if (action.payload.id > -1) {
+          tempReportObj.splice(action.payload.id, 1);
+        }
+        return tempReportObj;
+      case ACTIONS.SET_REPORT_NAME:
+        debugger
+        reportList[action.payload.id].reportItem.reportName =
+            action.payload.value;
+        return [...reportList];
+      case ACTIONS.SET_REPORT_DATE:
+        reportList[action.payload.id].reportItem.uploadDate =
+            action.payload.value;
+        return [...reportList];
+      case ACTIONS.SET_REPORT_TYPE:
+        reportList[action.payload.id].reportItem.reportType =
+            action.payload.value;
+        return [...reportList];
+      case ACTIONS.SET_DEPARTMENT:
+        reportList[action.payload.id].reportItem.department =
+            action.payload.value;
+        return [...reportList];
+      case ACTIONS.SET_REPORT_FILE:
+        reportList[action.payload.id].reportItem.file =
+            action.payload.file;
+        return [...reportList];
+      default:
+        return reportList;
+    }
+  }
+
   let reportOptions = ["MRI", "CT Scan ", "Blood Test"];
 
-  useEffect( () => {
+  useEffect(() => {
     const accessToken = getData('ACCESS_TOKEN');
     if (!accessToken) {
       props.history.push(`/`);
@@ -39,20 +104,6 @@ const UploadReport = (props) => {
     return () => {
     };
   }, []);
-
-  const getDepartmentValue = value => {
-    if(value){
-      const selectedDepartment = departments.find(department => department.id === value)
-      return selectedDepartment ? `${selectedDepartment.id}|${selectedDepartment.value}` : ''
-    }else{
-      return ''
-    }
-  }
-
-  const setDepartmentValue = (value) => {
-    const departmentInfo = value.split('|');
-    setDepartment(departmentInfo[0]);
-  }
 
   const thumbsContainer = {
     display: "flex",
@@ -174,125 +225,34 @@ const UploadReport = (props) => {
         });
   }
 
-  const renderUploadReportComponent = () => {
-    const userType = JSON.parse(getData('USER_TYPE'));
-    return (<>
-      <div className="upload-report1">
-        {/*<Row className="content">*/}
-        <Row>
-          <Col lg="6">
-            <Input
-                label="Report Name"
-                type="text"
-                placeholder="Consultation Report"
-                value={reportName}
-                onChange={setReportName}
-            />
-          </Col>
-          <Col lg="6">
-            <br/>
-            <Form.Label>Report Date</Form.Label>
-            <br/>
-            <Form.Control type="datetime-local"
-                          value={uploadDate}
-                          onKeyDown={(e) => e.preventDefault()}
-                          onChange={(e) => setUploadDate(e.target.value)}
-
-            />
-          </Col>
-        </Row>
-        {/*<Row className="content">*/}
-        <Row>
-          <Col lg="6">
-            <Select
-                label="Report Type"
-                defaultValue="Select"
-                id="report-type"
-                options={reportOptions}
-                handleSelect={setReportType}
-            />
-          </Col>
-          <Col lg="6">
-            {userType ===5 && <KeyValueSelector
-                label="Department"
-                id="department"
-                value={getDepartmentValue(department)}
-                defaultValue="Select department"
-                options={departments}
-                handleSelect={setDepartmentValue}
-            />}
-          </Col>
-        </Row>
-
-        <div className="upload-file">
-          {files.map((fileName) => (
-              <div className="uploaded" key={fileName.name}>
-                <div>
-                  <p className="file-name" key={fileName}>
-                    {fileName.name}{" "}
-                  </p>
-                  <p>{moment(fileName.lastModifiedDate).format("ll")}</p>
-                </div>
-                <button className="view-button" onClick={() => setFiles([])}>
-                  Delete
-                </button>
-              </div>
-          ))}
-          <Dropzone
-              onDrop={(acceptedFiles) => {
-                setError(false);
-                setFiles(
-                    acceptedFiles.map((file) =>
-                        Object.assign(file, {
-                          preview: URL.createObjectURL(file),
-                        })
-                    )
-                );
-              }}
-              accept="image/jpeg,.pdf"
-              maxFiles={1}
-              onDropRejected={(fileRejections, event) => {
-                setError(true);
-              }}
-          >
-            {({getRootProps, getInputProps}) => (
-                <div {...getRootProps()}>
-                  <input {...getInputProps()} />
-                  {files.length === 0 && (
-                      <div className="upload-text">
-                        <Image src={upload} alt="upload"/>
-                        <p>Drag and Drop the files here</p>
-                      </div>
-                  )}
-                </div>
-            )}
-          </Dropzone>
-        </div>
-
-        <div className="note">
-          Please upload report in pdf or jpeg format
-        </div>
-        {error && (
-            <div className="note" style={{color: "red", fontSize: "18px"}}>
-              Please upload single report file
-            </div>
-        )}
-      </div>
-    </>)
-  }
-
   return (
       <>
         <Row></Row>
         <Row>
           <Col lg="12">
             <div className="upload-report">
-              {renderUploadReportComponent()}
+              {reportList.map((report, index) => {
+                return (
+                    <UploadReportCard
+                        key={`report-${index}`}
+                        index={index}
+                        report={report}
+                        dispatch={dispatch}
+                        addToast={addToast}
+                        reportOptions={reportOptions}
+                        departmentsOptions={departments}
+                    />
+                );
+              })}
               {files.length > 0 && <h4>Preview</h4>}
               <aside style={thumbsContainer}>{thumbs}</aside>
-              <div className="add-more-report-button" onClick={() =>
-                  null
-              }>
+              <div className="add-more-report-button" onClick={() => {
+                dispatch({
+                  type: ACTIONS.ADD_NEW_REPORT,
+                  payload: reportObj,
+                });
+              }}
+              >
                 <div><Image src={plus_icon}/></div>
                 <div className="add-more-report-text">Add more</div>
               </div>
