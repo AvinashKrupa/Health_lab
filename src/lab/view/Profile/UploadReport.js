@@ -29,7 +29,6 @@ const UploadReport = (props) => {
   const [uploadDate, setUploadDate] = useState("");
   const [reportType, setReportType] = useState("");
   const [departments, setDepartments] = useState([]);
-  const [error, setError] = useState(false);
   const [files, setFiles] = useState([]);
   const {addToast} = useToasts();
 
@@ -108,49 +107,6 @@ const UploadReport = (props) => {
     return () => {
     };
   }, []);
-
-  const thumbsContainer = {
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: "wrap",
-    marginTop: 16,
-  };
-
-  const thumb = {
-    display: "-webkit-inline-box",
-    borderRadius: 2,
-    marginBottom: 8,
-    marginRight: 8,
-    width: 200,
-    height: 200,
-    padding: 4,
-    boxSizing: "border-box",
-  };
-
-  const thumbInner = {
-    display: "flex",
-    minWidth: 0,
-    overflow: "hidden",
-  };
-
-  const img = {
-    display: "block",
-    width: "auto",
-    height: "100%",
-  };
-
-  const thumbs = files.map((file) => (
-      <div style={thumb} key={file.name}>
-        <div style={thumbInner}>
-          {console.log(file.type, file.name)}
-          <img
-              src={file.type === "application/pdf" ? pdf : file.preview}
-              style={img}
-              alt="upload-report"
-          />
-        </div>
-      </div>
-  ));
 
   const isValidData = () => {
     console.log("files", files);

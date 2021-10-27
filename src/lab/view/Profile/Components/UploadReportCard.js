@@ -43,7 +43,7 @@ const UploadReportCard = ({
     const img = {
         display: "block",
         width: "auto",
-        height: "100%",
+        height: "50%",
     };
 
     const thumbs = report.reportItem.file.map((file) => (
