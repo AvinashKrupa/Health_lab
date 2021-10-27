@@ -20,6 +20,7 @@ export const ACTIONS = {
   SET_REPORT_FILE: "SET_REPORT_FILE",
   ADD_NEW_REPORT: "ADD_NEW_REPORT",
   DELETE_NEW_REPORT: "DELETE_NEW_REPORT",
+  SET_REPORT_FILE_ERROR: "SET_REPORT_FILE_ERROR",
 };
 
 
@@ -65,8 +66,11 @@ const UploadReport = (props) => {
         }
         return tempReportObj;
       case ACTIONS.SET_REPORT_NAME:
-        debugger
         reportList[action.payload.id].reportItem.reportName =
+            action.payload.value;
+        return [...reportList];
+      case ACTIONS.SET_REPORT_FILE_ERROR:
+        reportList[action.payload.id].validationInfo.fileError =
             action.payload.value;
         return [...reportList];
       case ACTIONS.SET_REPORT_DATE:
@@ -244,8 +248,6 @@ const UploadReport = (props) => {
                     />
                 );
               })}
-              {files.length > 0 && <h4>Preview</h4>}
-              <aside style={thumbsContainer}>{thumbs}</aside>
               <div className="add-more-report-button" onClick={() => {
                 dispatch({
                   type: ACTIONS.ADD_NEW_REPORT,

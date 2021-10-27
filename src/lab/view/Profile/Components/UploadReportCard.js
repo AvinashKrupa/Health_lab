@@ -6,7 +6,7 @@ import Dropzone from "react-dropzone";
 import {ACTIONS} from "../UploadReport";
 import KeyValueSelector from "../../../commonComponent/KeyValueSelector";
 import {getData} from "../../../storage/LocalStorage/LocalAsyncStorage";
-import {upload} from "../../../constants/PatientImages";
+import {pdf,upload} from "../../../constants/PatientImages";
 
 const UploadReportCard = ({
                               index,
@@ -16,6 +16,48 @@ const UploadReportCard = ({
                               departmentsOptions,
                           }) => {
     const userType = JSON.parse(getData('USER_TYPE'));
+
+    const thumbsContainer = {
+        display: "flex",
+        flexDirection: "row",
+        flexWrap: "wrap",
+        marginTop: 16,
+    };
+
+    const thumb = {
+        display: "-webkit-inline-box",
+        borderRadius: 2,
+        marginBottom: 8,
+        marginRight: 8,
+        width: 200,
+        height: 200,
+        padding: 4,
+        boxSizing: "border-box",
+    };
+
+    const thumbInner = {
+        display: "flex",
+        minWidth: 0,
+        overflow: "hidden",
+    };
+    const img = {
+        display: "block",
+        width: "auto",
+        height: "100%",
+    };
+
+    const thumbs = report.reportItem.file.map((file) => (
+        <div style={thumb} key={file.name}>
+            <div style={thumbInner}>
+                {console.log(file.type, file.name)}
+                <img
+                    src={file.type === "application/pdf" ? pdf : file.preview}
+                    style={img}
+                    alt="upload-report"
+                />
+            </div>
+        </div>
+    ));
 
     function setReportName(value) {
         dispatch({
@@ -45,6 +87,12 @@ const UploadReportCard = ({
     function setUploadFile(file) {
         dispatch({
             type: ACTIONS.SET_REPORT_FILE, payload: {id: index, file: file}
+        })
+    }
+
+    function setUploadFileError(fileError) {
+        dispatch({
+            type: ACTIONS.SET_REPORT_FILE_ERROR, payload: {id: index, value: fileError}
         })
     }
 
@@ -123,19 +171,19 @@ const UploadReportCard = ({
                 ))}
                 <Dropzone
                     onDrop={(acceptedFiles) => {
-                        // setError(false);
-                        // setFiles(
-                        //     acceptedFiles.map((file) =>
-                        //         Object.assign(file, {
-                        //             preview: URL.createObjectURL(file),
-                        //         })
-                        //     )
-                        // );
+                        setUploadFileError('')
+                        setUploadFile(
+                            acceptedFiles.map((file) =>
+                                Object.assign(file, {
+                                    preview: URL.createObjectURL(file),
+                                })
+                            )
+                        );
                     }}
                     accept="image/jpeg,.pdf"
                     maxFiles={1}
                     onDropRejected={(fileRejections, event) => {
-                        // setError(true);
+                        setUploadFileError('Please upload single report file')
                     }}
                 >
                     {({getRootProps, getInputProps}) => (
@@ -154,11 +202,13 @@ const UploadReportCard = ({
             <div className="note">
                 Please upload report in pdf or jpeg format
             </div>
-            {report.reportItem.error && (
+            {report.validationInfo.fileError && (
                 <div className="note" style={{color: "red", fontSize: "18px"}}>
-                    Please upload single report file
+                    {report.validationInfo.fileError}
                 </div>
             )}
+            {report.reportItem.file.length > 0 && <h4>Preview</h4>}
+            <aside style={thumbsContainer}>{thumbs}</aside>
         </div>
     )
 }
