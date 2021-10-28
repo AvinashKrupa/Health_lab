@@ -19,9 +19,9 @@ const EditProfilePictureColumn = (props) => {
                 <Col>
                     <Row style={{cursor: 'pointer'}}>
                         <Col className="button-section">
-                            <span className="doctor-detail">{`Doctor: ${props.doctorName}`}</span>
-                            <span className="doctor-detail">{`Time: ${props.appointmentTime}`}</span>
-                            <span className="doctor-detail">{`Date: ${props.appointmentDate}`}</span>
+                            <span className="doctor-detail">{`Doctor: `}<span className='doctor-detail-description'>{` ${props.doctorName}`}</span></span>
+                            <span className="doctor-detail">{`Time: `}<span className='doctor-detail-description'>{` ${props.appointmentTime}`}</span></span>
+                            <span className="doctor-detail">{`Date: `}<span className='doctor-detail-description'>{` ${props.appointmentDate}`}</span></span>
                         </Col>
                     </Row>
                 </Col>
