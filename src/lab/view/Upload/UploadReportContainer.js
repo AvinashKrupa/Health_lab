@@ -1,6 +1,6 @@
 import {Col, Row} from "react-bootstrap";
 import React, {useEffect, useState} from "react";
-import ProfilePictureColumn from "./AppointmentProfile";
+import AppointmentProfileColumn from "./AppointmentProfile";
 import UploadReport from "./UploadReport";
 import {back_icon} from "../../constants/DoctorImages";
 
@@ -35,7 +35,7 @@ const UploadReportContainer = (props) => {
                             </div>
                         </div>
                     </Row>
-                    <ProfilePictureColumn img={patientData.dp}
+                    <AppointmentProfileColumn img={patientData.dp}
                                           patientName={patientData.patientName} doctorId={'22'}
                                           patientMobile={patientData.mobile}
                                           setReloadSideColumn={setReloadSideColumn}
