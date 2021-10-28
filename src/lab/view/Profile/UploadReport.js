@@ -1,7 +1,6 @@
 import {withRouter} from "react-router-dom/cjs/react-router-dom.min";
 import {Col, Image, Row} from "react-bootstrap";
 import React, {useEffect, useReducer, useState} from "react";
-import {pdf} from "../../constants/PatientImages";
 import {API, get, post} from "../../api/config/APIController";
 import {useToasts} from "react-toast-notifications";
 import axios from "axios";
@@ -11,6 +10,7 @@ import {isEmpty} from "../../utils/Validators";
 import {plus_icon} from "../../constants/DoctorImages";
 
 import UploadReportCard from "./Components/UploadReportCard";
+import CustomButton from "../../commonComponent/Button";
 
 export const ACTIONS = {
   SET_REPORT_NAME: "SET_REPORT_NAME",
@@ -25,13 +25,19 @@ export const ACTIONS = {
 
 
 const UploadReport = (props) => {
-  const [reportName, setReportName] = useState("");
-  const [uploadDate, setUploadDate] = useState("");
-  const [reportType, setReportType] = useState("");
+  const [patientData, setPatientData] = useState({});
   const [departments, setDepartments] = useState([]);
-  const [files, setFiles] = useState([]);
+  const [showLoader, setShowLoader] = useState(false);
   const {addToast} = useToasts();
-
+  const userType = JSON.parse(getData('USER_TYPE'));
+  useEffect(() => {
+    if (!props.location?.state?.reportInfo) {
+      props.history.goBack();
+      return;
+    } else {
+      setPatientData(props.location?.state?.reportInfo);
+    }
+  }, []);
   const reportObj = {
     reportItem: {
       reportName: "",
@@ -109,42 +115,68 @@ const UploadReport = (props) => {
   }, []);
 
   const isValidData = () => {
-    console.log("files", files);
-    if (isEmpty(uploadDate)) {
-      addToast("Please enter date", {appearance: "error"});
-      return false;
-    } else if (isEmpty(reportType)) {
-      addToast("Please enter report type", {appearance: "error"});
-      return false;
-    } else if (isEmpty(reportName)) {
-      addToast("Please enter report name", {appearance: "error"});
-      return false;
-    } else if (files.length === 0) {
-      addToast("Please select the file", {appearance: "error"});
-      return false;
-    } else {
-      return true;
+    for (let i = 0; i < reportList.length; i++) {
+    if (isEmpty(reportList[i].reportItem.reportName)) {
+        addToast("Please enter report name", {appearance: "error"});
+        return false;
+      }else if (isEmpty(reportList[i].reportItem.uploadDate)) {
+        addToast("Please enter report date", {appearance: "error"});
+        return false;
+      } else if (isEmpty(reportList[i].reportItem.reportType) || reportList[i].reportItem.reportType === "Select") {
+        addToast("Please enter report type", {appearance: "error"});
+        return false;
+      }  else if (isEmpty(reportList[i].reportItem.department) && userType === 5) {
+        addToast("Please select the department", {appearance: "error"});
+        return false;
+      } else if (reportList[i].reportItem.file.length === 0) {
+        addToast("Please select the file", {appearance: "error"});
+        return false;
+      }
+    if(i === reportList.length-1){
+        return true
+      }
     }
   };
 
   const uploadReport = () => {
     if (isValidData()) {
       let bodyFormData = new FormData();
-      bodyFormData.append("file", files[0]);
-      bodyFormData.append("type", reportType);
-      bodyFormData.append("title", reportName);
-      bodyFormData.append("date", `${uploadDate}:00.000+00:00`);
-
+      if(userType === 5){
+        for (let i = 0; i < reportList.length; i++) {
+          bodyFormData.append("appointment", patientData.appointmentId);
+          bodyFormData.append("patient", patientData.patientId);
+          bodyFormData.append("file", reportList[i].reportItem.file[0]);
+          bodyFormData.append("type", reportList[i].reportItem.reportType);
+          bodyFormData.append("title", reportList[i].reportItem.reportName);
+          bodyFormData.append("department", reportList[i].reportItem.department);
+          bodyFormData.append("date", `${reportList[i].reportItem.uploadDate}:00.000+00:00`);
+        }
+      }else {
+        for (let i = 0; i < reportList.length; i++) {
+          bodyFormData.append("appointment", patientData.appointmentId);
+          bodyFormData.append("patient", patientData.patientId);
+          bodyFormData.append("file", reportList[i].reportItem.file[0]);
+          bodyFormData.append("type", reportList[i].reportItem.reportType);
+          bodyFormData.append("title", reportList[i].reportItem.reportName);
+          bodyFormData.append("date", `${reportList[i].reportItem.uploadDate}:00.000+00:00`);
+        }
+      }
+      setShowLoader(true);
       uploadImageWithData(API.UPLOAD_REPORT, bodyFormData)
           .then((response) => {
-            setReportName("");
-            setReportType("");
-            setUploadDate("");
-            setFiles([]);
-            console.log("File upload response: ", response);
+            if (response.status === 200) {
+              setShowLoader(false);
+              console.log("Reports uploaded successfully: ", response);
+              props.history.push(`/home`);
+              addToast(response.data.message, { appearance: "success" });
+            } else {
+              setShowLoader(false);
+              addToast(response.data.message, { appearance: "error" });
+            }
           })
           .catch((error) => {
-            console.log("File upload error: ", error);
+            setShowLoader(false);
+            console.log("Reports failed to upload with error: ", error);
           });
     }
   };
@@ -215,13 +247,20 @@ const UploadReport = (props) => {
                 <div className="add-more-report-text">Add more</div>
               </div>
               <div className="button-div">
-                <button
-                    className="upload-button "
-                    type="button"
+                {showLoader && <CustomButton
+                    type="submit"
+                    disabled
                     onClick={uploadReport}
-                >
-                  Upload
-                </button>
+                    importantStyle={{backgroundColor: "#e2e9e9"}}
+                    showLoader={showLoader}
+                    className={'upload-button'}
+                ></CustomButton>}
+                {!showLoader && <CustomButton
+                    type="submit"
+                    onClick={uploadReport}
+                    text={'Upload'}
+                    className={'upload-button'}
+                ></CustomButton>}
               </div>
             </div>
           </Col>
