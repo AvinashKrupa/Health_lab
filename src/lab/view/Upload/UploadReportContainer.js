@@ -1,11 +1,11 @@
 import {Col, Row} from "react-bootstrap";
 import React, {useEffect, useState} from "react";
-import ProfilePictureColumn from "./EditPatientProfileColumn";
+import ProfilePictureColumn from "./AppointmentProfile";
 import UploadReport from "./UploadReport";
 import {back_icon} from "../../constants/DoctorImages";
 
 
-const PatientProfile = (props) => {
+const UploadReportContainer = (props) => {
     const [reloadSideColumn, setReloadSideColumn] = useState(false);
     const [patientData, setPatientData] = useState({});
 
@@ -54,4 +54,4 @@ const PatientProfile = (props) => {
 
     );
 };
-export default PatientProfile;
+export default UploadReportContainer;

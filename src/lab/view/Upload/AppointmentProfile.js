@@ -3,7 +3,7 @@ import {doctor} from "../../constants/DoctorImages";
 import {Col, Container, Image, Row} from "react-bootstrap";
 import {withRouter} from 'react-router-dom'
 
-const EditProfilePictureColumn = (props) => {
+const AppointmentProfile = (props) => {
     return (
         <Container className="profile-left-Column">
             <Row>
@@ -32,4 +32,4 @@ const EditProfilePictureColumn = (props) => {
     );
 };
 
-export default withRouter(EditProfilePictureColumn);
+export default withRouter(AppointmentProfile);

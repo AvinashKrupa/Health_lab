@@ -5,7 +5,7 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import PrivateRoute from './lab/hoc/PrivateRoute';
 import LabLogin from './lab/view/Login';
 import Homepage from "./lab/view/appointment/Homepage";
-import PatientProfile from "./lab/view/Profile/PatientProfile";
+import UploadReportContainer from "./lab/view/Upload/UploadReportContainer";
 import PDFViewer from "./../src/lab/commonComponent/PDFViewerScreen";
 import NotFoundPage from './../src/lab/commonComponent/NotFoundPage'
 import MainView from "./../src/lab/MainView";
@@ -38,7 +38,7 @@ function App() {
               <Switch>
                 <PrivateRoute exact path='/home' component={Homepage}/>
                 <PrivateRoute exact path='/home/search' component={Homepage}/>
-                <PrivateRoute exact path='/upload' component={PatientProfile}/>
+                <PrivateRoute exact path='/upload' component={UploadReportContainer}/>
                 <PrivateRoute exact path='/upload/PDF' component={PDFViewer}/>
                 <Route component={NotFoundPage} isNotFound={true}/>
               </Switch>
