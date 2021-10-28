@@ -7,6 +7,7 @@ import {ACTIONS} from "../UploadReport";
 import KeyValueSelector from "../../../commonComponent/KeyValueSelector";
 import {getData} from "../../../storage/LocalStorage/LocalAsyncStorage";
 import {pdf,upload} from "../../../constants/PatientImages";
+import {IoCloseSharp} from "react-icons/io5";
 
 const UploadReportCard = ({
                               index,
@@ -113,6 +114,16 @@ const UploadReportCard = ({
     return (
         <div className="upload-card-container">
             <Row>
+                <Col lg="12">
+                    <div style={{display: 'flex', flexDirection: 'row-reverse'}}>
+                        <IoCloseSharp style={{cursor: 'pointer'}} color={'#000'} size={34} onClick={() => {
+                            dispatch({
+                                type: ACTIONS.DELETE_NEW_REPORT, payload: {id: index}
+                            })
+                        }
+                        }/>
+                    </div>
+                </Col>
                 <Col lg="6">
                     <Input
                         label="Report Name"
