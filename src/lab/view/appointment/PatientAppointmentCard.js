@@ -1,5 +1,5 @@
 import { Card } from "@material-ui/core";
-import {calendar,clock} from "../../constants/DoctorImages";
+import {calendar,clock} from "../../constants/LabImages";
 import {Image} from "react-bootstrap";
 import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
 

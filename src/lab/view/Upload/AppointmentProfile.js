@@ -1,5 +1,5 @@
 import React from "react";
-import {doctor} from "../../constants/DoctorImages";
+import {doctor} from "../../constants/LabImages";
 import {Col, Container, Image, Row} from "react-bootstrap";
 import {withRouter} from 'react-router-dom'
 

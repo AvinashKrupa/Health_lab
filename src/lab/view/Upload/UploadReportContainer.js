@@ -2,7 +2,7 @@ import {Col, Row} from "react-bootstrap";
 import React, {useEffect, useState} from "react";
 import AppointmentProfileColumn from "./AppointmentProfile";
 import UploadReport from "./UploadReport";
-import {back_icon} from "../../constants/DoctorImages";
+import {back_icon} from "../../constants/LabImages";
 
 
 const UploadReportContainer = (props) => {

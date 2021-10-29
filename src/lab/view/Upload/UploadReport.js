@@ -7,7 +7,7 @@ import axios from "axios";
 import Constants from "../../constants";
 import {getData} from "../../storage/LocalStorage/LocalAsyncStorage";
 import {isEmpty} from "../../utils/Validators";
-import {plus_icon} from "../../constants/DoctorImages";
+import {plus_icon} from "../../constants/LabImages";
 
 import UploadReportCard from "./Components/UploadReportCard";
 import CustomButton from "../../commonComponent/Button";

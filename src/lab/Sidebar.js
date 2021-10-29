@@ -1,10 +1,10 @@
 import SideNav, {NavIcon, NavItem, NavText} from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
-import {clearSession, getData} from "./storage/LocalStorage/LocalAsyncStorage";
-import { withRouter } from 'react-router-dom'
-import {back_icon, upload_icon} from "../../src/lab/constants/DoctorImages";
+import {clearSession} from "./storage/LocalStorage/LocalAsyncStorage";
+import {withRouter} from 'react-router-dom'
+import {upload_icon} from "../../src/lab/constants/LabImages";
 import React from "react";
-import { useToasts } from 'react-toast-notifications';
+import {useToasts} from 'react-toast-notifications';
 import {API, post} from './api/config/APIController';
 
 
@@ -14,9 +14,9 @@ const Sidebar = (props) => {
     const {addToast} = useToasts();
     const newRoutes = props.location.pathname.split("/") || [];
     let defaultSelection = "home"
-    for (let i = 0; i <newRoutes.length ; i++) {
+    for (let i = 0; i < newRoutes.length; i++) {
         const found = sidebar.includes(newRoutes[i])
-        if(found){
+        if (found) {
             defaultSelection = newRoutes[i];
         }
     }
@@ -39,14 +39,14 @@ const Sidebar = (props) => {
     return (
         <div className="sidebarMenu">
             <SideNav onSelect={(selected) => {
-                if( selected === 'profile') {
+                if (selected === 'profile') {
                     selected = 'profile/editProfile';
                     props.history.push(`${selected}`);
                 }
-                if( selected === 'signOut') {
+                if (selected === 'signOut') {
                     handleLogout();
                 }
-                if( selected === undefined) {
+                if (selected === undefined) {
                     props.history.push(`/home`);
                 }
                 sidebar.includes(selected) && props.history.push(`${selected}`);
@@ -63,8 +63,8 @@ const Sidebar = (props) => {
                     </NavItem>
                     <NavItem eventKey="home">
                         <NavIcon>
-                            <div style={{display:"flex", flexDirection:"column", alignItems: "center"}}>
-                                <img alt='upload' src={upload_icon} style={{width:"28px",height:"44px",}}></img>
+                            <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+                                <img alt='upload' src={upload_icon} style={{width: "28px", height: "44px",}}></img>
                             </div>
                         </NavIcon>
                         <NavText>

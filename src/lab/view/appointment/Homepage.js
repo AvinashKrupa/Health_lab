@@ -1,4 +1,3 @@
-import moment from 'moment-timezone';
 import {Col, Row} from "react-bootstrap";
 import {API, post} from '../../api/config/APIController';
 import React, {useEffect, useState} from "react";
@@ -17,7 +16,7 @@ const Homepage = (props) => {
     let [appointmentLoaderStatus, setAppointmentLoaderStatus] = useState(false);
     const [appointments, setAppointments] = useState([]);
 
-    useEffect( () => {
+    useEffect(() => {
         const accessToken = getData('ACCESS_TOKEN');
         if (!accessToken) {
             props.history.push(`/`);

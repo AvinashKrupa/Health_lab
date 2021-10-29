@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Col, Image, Row } from "react-bootstrap";
 import PDFViewer from 'mgr-pdf-viewer-react';
-import { back_icon } from "../constants/DoctorImages";
+import { back_icon } from "../constants/LabImages";
 import {getData} from "../storage/LocalStorage/LocalAsyncStorage";
 export const PDFViewerScreen = (props) => {
-  
+
   if(props.location?.state?.url){
     localStorage.setItem('PDF_URL',props.location?.state?.url)
   }

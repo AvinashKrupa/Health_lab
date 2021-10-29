@@ -6,7 +6,7 @@ import Dropzone from "react-dropzone";
 import {ACTIONS} from "../UploadReport";
 import KeyValueSelector from "../../../commonComponent/KeyValueSelector";
 import {getData} from "../../../storage/LocalStorage/LocalAsyncStorage";
-import {pdf,upload} from "../../../constants/PatientImages";
+import {pdf,upload} from "../../../constants/LabImages";
 import {IoCloseSharp} from "react-icons/io5";
 
 const UploadReportCard = ({
