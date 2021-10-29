@@ -10,11 +10,6 @@ import {AuthContextProvider} from './lab/context/AuthContextProvider';
 import { ToastProvider } from 'react-toast-notifications';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
-
-
-
-
-
 ReactDOM.render(
     <React.StrictMode>
         <AuthContextProvider>
