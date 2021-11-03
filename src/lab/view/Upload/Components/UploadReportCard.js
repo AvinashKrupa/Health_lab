@@ -40,22 +40,33 @@ const UploadReportCard = ({
         display: "flex",
         minWidth: 0,
         overflow: "hidden",
+        flexDirection: "column",
     };
     const img = {
         display: "block",
         width: "auto",
         height: "50%",
     };
+    const pdfIcon = {
+        display: "block",
+        width: "40%",
+        height: "40%",
+    };
 
     const thumbs = report.reportItem.file.map((file) => (
         <div style={thumb} key={file.name}>
             <div style={thumbInner}>
-                {console.log(file.type, file.name)}
-                <img
+                {file.type !== "application/pdf" && <img
                     src={file.type === "application/pdf" ? pdf : file.preview}
                     style={img}
                     alt="upload-report"
-                />
+                />}
+                {file.type === "application/pdf" && <img
+                    src={file.type === "application/pdf" ? pdf : file.preview}
+                    style={pdfIcon}
+                    alt="upload-report"
+                />}
+                <span style={{marginTop:'10px'}}>filename: {file.name}</span>
             </div>
         </div>
     ));
@@ -112,7 +123,7 @@ const UploadReportCard = ({
         }
     }
     return (
-        <div className="upload-card-container">
+        <div className="upload-card-container" key={`upload1-${index}`}>
             <Row>
                 <Col lg="12">
                     <div style={{display: 'flex', flexDirection: 'row-reverse'}}>
@@ -218,7 +229,7 @@ const UploadReportCard = ({
                     {report.validationInfo.fileError}
                 </div>
             )}
-            {report.reportItem.file.length > 0 && <h4>Preview</h4>}
+            {report.reportItem.file.length > 0 && <h5>Attached file</h5>}
             <aside style={thumbsContainer}>{thumbs}</aside>
         </div>
     )
